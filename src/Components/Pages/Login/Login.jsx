@@ -76,8 +76,8 @@ export const Login = () => {
                     {/* //Knap der kalder vores logout funktion og logger af */}
                     <button onClick={logOut}>Logout</button></>)}
             {/* Pleaceholder til eventuel admin panel
-                    <Admin />
-                     */}
+            <Admin />*/}
+
         </Layout>
     );
 }
