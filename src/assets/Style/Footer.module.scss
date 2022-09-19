@@ -5,10 +5,40 @@ footer {
     height: 15%;
     width: 100%;
     display: grid;
-    background-color: #000;
+    background-color: $Tertiary;
     color: #fff;
     font-size: 2vh;
     padding-left: 1em;
     margin: 0 -1% -1%-1%;
     padding: 10px 10px 0 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+        display: block;
+    }
+
+    svg {
+        text-align: right;
+        padding: 1em 0.2em 1em;
+        font-size: 2em;
+        cursor: pointer;
+
+        @media (width < $mobile) {
+            padding: 0;
+
+        }
+    }
 }
