@@ -1,0 +1,44 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+@import '../Helpers/animation';
+
+.checkmarks {
+    @include Checkmarks;
+}
+
+.form {
+    input {
+        margin-left: 0;
+        margin-bottom: 10px;
+        padding: 5px 5px;
+        display: block;
+        width: 55%;
+        height: 35px;
+        border: none;
+        border: solid black 1px;
+    }
+
+    textarea {
+        border: none;
+        resize: none;
+        display: block;
+    }
+
+    //Style af knapper
+    button {
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
+
+//Message ved sendt form
+.formMessage {
+    article {
+        p {
+            color: black;
+        }
+    }
+}

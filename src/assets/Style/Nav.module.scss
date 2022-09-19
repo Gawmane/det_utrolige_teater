@@ -1,0 +1,111 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+//Fuld navigation
+
+.navigation {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    // background-color: $background;
+
+
+    //Gør at navigationen bliver fjernet når vi kommer ned i mobil størrelse
+    @media (width < $mobile) {
+        display: none;
+    }
+
+    .ulwrapper {
+        li {
+            display: inline-block;
+            padding: 1vw;
+
+            a {
+                text-decoration: none;
+                font-size: 15pt;
+                color: #fff;
+
+                &:hover {
+                    cursor: pointer;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+
+//Størrelse og placering af wrapper
+.burgerMenu {
+    position: absolute;
+    width: 5vw;
+    height: 10vh;
+    right: 2em;
+
+    //Gør at navigationen bliver fjernet når vi kommer ned i mobil størrelse
+    @media (width > $mobile) {
+        display: none;
+    }
+
+    //Fjerne x 
+    .burgerMenuClose {
+        display: none
+    }
+
+    //Placering og style af home 
+    .burgerMenuHome {
+        position: absolute;
+        background-color: transparent;
+        transition: .2s ease-in-out;
+        height: 7vh;
+        width: 3.5vw;
+        color: white;
+    }
+}
+
+//Størrelse af wrapper ved active
+.burgerMenuActive {
+    position: absolute;
+    width: 4vw;
+    height: 5vh;
+    right: 2em;
+
+    //Fjerne home icon
+    .burgerMenuHome {
+        display: none
+    }
+
+    //Placering og style af x 
+    .burgerMenuClose {
+        position: absolute;
+        height: 7vh;
+        width: 3.5vw;
+        color: white;
+        background-color: transparent;
+        transition: .2s ease-in-out;
+        z-index: 1;
+    }
+}
+
+//Fjerner menuen når den ikke er active (|||)
+.menu {
+    display: none;
+}
+
+//Boksen der vises når burgermenu er active
+.activeMenu {
+    position: absolute;
+    list-style: none;
+    top: 5vh;
+    width: 90%;
+    padding: 1em;
+    border: 1px solid #000;
+    background-color: #000;
+
+    .navigationLinks {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1em;
+    }
+
+
+}

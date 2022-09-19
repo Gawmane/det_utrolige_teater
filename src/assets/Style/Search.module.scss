@@ -1,0 +1,40 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+//Vores input og søge form
+.searchform {}
+
+//Article under Result der tager alt indhold på det søgte ord
+
+.searchlist {
+
+    margin-bottom: 10em;
+    z-index: 3;
+    background-color: #000;
+    display: block;
+
+    @include figure;
+
+
+    figure {
+        border-color: #fff;
+        margin-left: 0;
+        display: grid;
+        grid-template-columns: auto auto;
+
+        &:hover {
+            color: #fff;
+        }
+
+        img {
+            width: 5vh;
+        }
+
+        figcaption {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            font-size: 2vh;
+            margin: auto;
+        }
+    }
+}

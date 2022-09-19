@@ -1,0 +1,14 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+footer {
+    height: 15%;
+    width: 100%;
+    display: grid;
+    background-color: #000;
+    color: #fff;
+    font-size: 2vh;
+    padding-left: 1em;
+    margin: 0 -1% -1%-1%;
+    padding: 10px 10px 0 10px;
+}
