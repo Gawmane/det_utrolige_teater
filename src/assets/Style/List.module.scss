@@ -5,6 +5,10 @@
 .highlight {
     @include figure;
 
+    figure {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
 
 
 }
@@ -41,4 +45,15 @@
 
         background-color: $Primary;
     }
+}
+
+.eventlist {
+    @include figure;
+    @include button;
+
+    figure {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
 }

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 //Styling
-// import style from "../../../assets/Style/pr.module.scss"
+import style from "../../../assets/Style/List.module.scss"
+
 import { Layout } from "../../Tools/Layout/Layout"
 
 // Function Component til lister
@@ -32,7 +33,7 @@ export const EventList = () => {
     return (
         //Styring af title og beskrivelse via vores layout (seo)
         <Layout title="Title" description="beskrivelse">
-            <>
+            <section className={style.eventlist}>
                 {/* //Mapper data */}
                 {data && data.map((items) => {
 
@@ -56,6 +57,6 @@ export const EventList = () => {
                 }
 
                 )}
-            </></Layout>
+            </section></Layout>
     )
 }
