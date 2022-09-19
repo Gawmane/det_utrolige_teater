@@ -1,0 +1,35 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+.homelist {
+    @include figure;
+    @include button;
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    figure {
+
+
+        hr {
+            width: 50%;
+            border: solid 0.2px rgb(228, 228, 228);
+
+        }
+
+        article {
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: flex-end;
+            align-content: stretch;
+        }
+
+    }
+
+    button {
+
+        background-color: $Primary;
+    }
+}

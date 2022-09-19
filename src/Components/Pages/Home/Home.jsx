@@ -5,9 +5,10 @@ import { HomeList } from "./HomeList"
 export const Home = () => {
     return (
         <>
-            <Layout title="Home page" description="opgave">
+            <Layout title="Forside" description="opgave">
 
                 <HomeList />
+
             </Layout>
         </>
     )
