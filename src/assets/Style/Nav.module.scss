@@ -6,7 +6,7 @@
 .navigation {
     display: grid;
     grid-template-columns: auto auto auto;
-    // background-color: $background;
+
 
 
     //Gør at navigationen bliver fjernet når vi kommer ned i mobil størrelse
@@ -22,11 +22,11 @@
             a {
                 text-decoration: none;
                 font-size: 15pt;
-                color: #fff;
+                color: $Tertiary;
 
                 &:hover {
                     cursor: pointer;
-                    color: black;
+                    color: $Primary;
                 }
             }
         }

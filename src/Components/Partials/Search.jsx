@@ -41,7 +41,7 @@ const SearchResult = props => {
     //UseEffect hook - laver en sync const der laver en axios get af endpoint med keyword parameter
     useEffect(() => {
         const getData = async () => {
-            const result = await axios.get(`https://api.mediehuset.net/homelands/search/${props.keyword}`);
+            const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search${props.keyword}`);
             setSearchData(result.data)
         }
         getData()
@@ -51,10 +51,10 @@ const SearchResult = props => {
 
     return (
         <>
-        //Ser efter om der er nogle num_items(antal data i søgningen) - hvis der er; vis result. Hvis ikke; vis noresult
-            {searchData.num_items ?
-                // Viser hvor mange resultater(num_items), der er på ordet (keyword) og viser data (items) - hentes fra result
-                <Result num_items={searchData.num_items} items={searchData.items} keyword={props.keyword} />
+        //Ser efter om der er nogle count(antal data i søgningen) - hvis der er; vis result. Hvis ikke; vis noresult
+            {searchData.count ?
+                // Viser hvor mange resultater(count), der er på ordet (keyword) og viser data (items) - hentes fra result
+                <Result num_items={searchData.count} items={searchData.items} keyword={props.keyword} />
                 :
                 //Viser fejlbesked fra noResult med ordet i beskeden (keyword)
                 <NoResult keyword={props.keyword} />}
@@ -73,14 +73,14 @@ const Result = (props) => {
     };
     return (
         <article className={style.searchlist}>
-            <h3>Fandt {props.num_items} resultater på ordet <i>{props.keyword}</i></h3>
+            <h3>Fandt {props.count} resultater på ordet <i>{props.keyword}</i></h3>
 
 
             {props.items && props.items.map(item => {
                 return (
                     //Linker til detajle siden med det id der passer sammen og kalder removesearchresult der fjerner listen
-                    <Link to={`/details/${item.id}`} onClick={RemoveSearchResult} >
-                        <p key={item.id} />
+                    <Link to={`/events/${item.id}`} onClick={RemoveSearchResult} >
+                        <p key={item.title} />
                     </Link>
                 )
             })}
