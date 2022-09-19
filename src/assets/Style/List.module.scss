@@ -1,6 +1,15 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
 
+//Highligt header
+.highlight {
+    @include figure;
+
+
+
+}
+
+//Liste på forside
 .homelist {
     @include figure;
     @include button;

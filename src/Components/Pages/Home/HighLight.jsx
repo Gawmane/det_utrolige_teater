@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; import axios from "axios";
+import axios from "axios";
+import style from "../../../assets/Style/List.module.scss"
 
 export const HighLight = () => {
     const [data, setData] = useState([]);
@@ -22,11 +23,11 @@ export const HighLight = () => {
         // Dependency array - hvis det ændres renderes komponenten
     }, [setData]);
     return (
-        <>
+        <section className={style.highlight}>
             {data && data.map((items) => {
                 return (
                     <figure key={items.id}>
-                        <img src={items.image} alt={items.title} />
+
                         <figcaption>
                             <article>
                                 <h4>{items.title}</h4>
@@ -35,10 +36,11 @@ export const HighLight = () => {
                                 <p>{items.genre}</p>
                             </article>
                         </figcaption>
+                        <img src={items.image} alt={items.title} />
                     </figure>
 
                 )
             })}
-        </>
+        </section>
     );
 }
