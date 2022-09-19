@@ -41,7 +41,7 @@ const SearchResult = props => {
     //UseEffect hook - laver en sync const der laver en axios get af endpoint med keyword parameter
     useEffect(() => {
         const getData = async () => {
-            const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search${props.keyword}`);
+            const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search/${props.keyword}`);
             setSearchData(result.data)
         }
         getData()
@@ -51,10 +51,10 @@ const SearchResult = props => {
 
     return (
         <>
-        //Ser efter om der er nogle count(antal data i søgningen) - hvis der er; vis result. Hvis ikke; vis noresult
+            {/* //Ser efter om der er nogle count(antal data i søgningen) - hvis der er; vis result. Hvis ikke; vis noresult */}
             {searchData.count ?
                 // Viser hvor mange resultater(count), der er på ordet (keyword) og viser data (items) - hentes fra result
-                <Result num_items={searchData.count} items={searchData.items} keyword={props.keyword} />
+                <Result count={searchData.count} items={searchData.items} keyword={props.keyword} />
                 :
                 //Viser fejlbesked fra noResult med ordet i beskeden (keyword)
                 <NoResult keyword={props.keyword} />}
@@ -80,8 +80,10 @@ const Result = (props) => {
                 return (
                     //Linker til detajle siden med det id der passer sammen og kalder removesearchresult der fjerner listen
                     <Link to={`/events/${item.id}`} onClick={RemoveSearchResult} >
-                        <p key={item.title} />
+                        <p key={item.id}> {item.title}</p>
+
                     </Link>
+
                 )
             })}
         </article >)

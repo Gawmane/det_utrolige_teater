@@ -10,7 +10,7 @@
 
     margin-bottom: 10em;
     z-index: 3;
-    background-color: #000;
+    background-color: $Primary;
     display: block;
 
     @include figure;
