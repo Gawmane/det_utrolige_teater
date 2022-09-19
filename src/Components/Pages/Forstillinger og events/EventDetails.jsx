@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 //Styling
 import { Layout } from "../../Tools/Layout/Layout";
 // import style from "../../../assets/Style/Houses.module.scss"
@@ -37,9 +37,40 @@ export const EventDetails = () => {
 
             {/* //Tjekker data og returner vores indhold hvis det er der, ellers null */}
             {data && data ? (
-                <>
-                    <h1>{data.title}</h1>
-                </>
+                <section key={data.id}>
+                    <figure key={data.id}>
+                        <p>{data.stage_name}</p>
+                        <p>{data.startdate} - {data.stopdate}</p>
+                        <p>Billetpris: {data.price} DKK</p>
+                        <img src={data.image} alt={data.title} />
+                        <figcaption>
+                            <article>
+                                <h2>{data.title}</h2>
+                                <h3>{data.genre}</h3>
+                                <button><Link to={`/${data.id}`} >Køb billet</Link></button>
+                                <p>{data.description}</p>
+                            </article>
+                            <article>
+                                <h3>Medvirkende</h3>
+
+                                {/* {data && data.actors.map((actors) => {
+
+                                    return (
+                                        <figure>
+                                            <img src={actors.image} alt={actors.name} />
+                                            <figcaption>
+                                                <p>{actors.name}</p>
+                                            </figcaption>
+                                        </figure>
+
+                                    )
+
+                                })} */}
+
+                            </article>
+                        </figcaption>
+                    </figure>
+                </section>
 
             ) : null}
 
