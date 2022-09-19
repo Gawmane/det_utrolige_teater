@@ -6,7 +6,7 @@ import { Layout } from "../../Tools/Layout/Layout";
 // import style from "../../../assets/Style/Houses.module.scss"
 
 // Function Component til details
-export const Details = () => {
+export const EventDetails = () => {
     const { data_id } = useParams(0);
     //Får objekt ud {} - fordi [] arrey kommer kun ud ved lister
     const [data, setData] = useState({});
@@ -16,7 +16,7 @@ export const Details = () => {
         //Async funktion til kald af api med axios
         const getDetailsData = async () => {
             try {
-                const result = await axios.get(`https://api.mediehuset.net/homelands/homes/${data_id}`);
+                const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/${data_id}`);
                 setData(result.data.item);
 
             }
@@ -35,10 +35,10 @@ export const Details = () => {
         // Kalder layout komponent med description
         <Layout description="detaljer">
 
-//Tjekker data og returner vores indhold hvis det er der, ellers null
+            {/* //Tjekker data og returner vores indhold hvis det er der, ellers null */}
             {data && data ? (
                 <>
-                    <h1>{data.id}</h1>
+                    <h1>{data.title}</h1>
                 </>
 
             ) : null}

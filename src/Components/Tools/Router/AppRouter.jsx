@@ -6,6 +6,7 @@ import { NotFound } from '../../Pages/NotFound/NotFound'
 import { Home } from '../../Pages/Home/Home'
 import { Login } from '../../Pages/Login/Login'
 import { EventList } from '../../Pages/Forstillinger og events/EventList'
+import { EventDetails } from '../../Pages/Forstillinger og events/EventDetails'
 
 
 export const AppRouter = () => {
@@ -21,7 +22,7 @@ export const AppRouter = () => {
             {/* ROUTER PLACEHOLDER TIL LISTE MED DETALJE VISNING */}
             <Route path='/events'>
                 <Route index element={<EventList />} ></Route>
-                {/* <Route path=":data_id" element={<Details />}></Route> */}
+                <Route path=":data_id" element={<EventDetails />}></Route>
             </Route>
 
             <Route path='*' element={<NotFound />} />

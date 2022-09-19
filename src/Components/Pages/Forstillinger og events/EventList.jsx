@@ -46,7 +46,7 @@ export const EventList = () => {
                                         <p>{items.startdate} - {items.stopdate}</p>
                                         <p>{items.stage_name}</p>
                                     </span>
-                                    <button><Link to={`/boliger/${items.id}`} >Læs mere</Link></button>
+                                    <button><Link to={`${items.id}`} >Læs mere</Link></button>
                                     <button><Link to={`/boliger/${items.id}`} >Køb billet</Link></button>
                                 </article>
                             </figcaption>
