@@ -1,2 +1,6 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
+
+body {
+    @include sidepadding;
+}

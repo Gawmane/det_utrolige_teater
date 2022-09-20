@@ -3,15 +3,14 @@
 
 
 .header {
-    div {
-        display: grid;
-        grid-template-columns: auto auto;
+    height: 30vh;
 
-        img {
-
-            width: 20vw;
-        }
-
+    img {
+        width: 20vw;
+        position: absolute;
+        margin: 2em;
     }
+
+
 
 }

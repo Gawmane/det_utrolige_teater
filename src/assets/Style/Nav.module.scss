@@ -5,8 +5,12 @@
 
 
 .navigation {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
 
     //Gør at navigationen bliver fjernet når vi kommer ned i mobil størrelse
     @media (width < $mobile) {
@@ -20,12 +24,18 @@
 
             a {
                 text-decoration: none;
+                text-transform: uppercase;
                 font-size: 15pt;
                 color: $Tertiary;
 
                 &:hover {
                     cursor: pointer;
                     color: $Primary;
+                }
+
+                &:focus {
+                    color: $Primary;
+
                 }
             }
         }
@@ -57,7 +67,12 @@
         transition: .2s ease-in-out;
         height: 7vh;
         width: 3.5vw;
-        color: white;
+        color: rgb(255, 0, 0);
+
+        &:hover {
+            cursor: pointer;
+            color: #000;
+        }
     }
 }
 
@@ -78,10 +93,10 @@
         position: absolute;
         height: 7vh;
         width: 3.5vw;
-        color: white;
+        color: rgb(255, 0, 0);
         background-color: transparent;
         transition: .2s ease-in-out;
-        z-index: 1;
+        // z-index: 1;
     }
 }
 
@@ -104,6 +119,10 @@
         text-decoration: none;
         color: #fff;
         font-size: 1em;
+
+        &:focus {
+            color: $Primary;
+        }
     }
 
 

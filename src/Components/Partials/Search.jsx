@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 //Style og icons
 import style from '../../assets/Style/Search.module.scss'
-import { BsArrowRightShort } from "react-icons/bs";
+import { AiOutlineSearch } from "react-icons/ai";
 
 
 //Funtion component
@@ -23,8 +23,8 @@ const Search = () => {
             {/* //closure = sender funktion videre som tager en funktion som argument og så lukker */}
             <form onSubmit={handleSubmit(getSearchResult)} className={style.searchform}>
                 {/* //Spread operator(...) - giver mulighed for at kopiere hele eller dele af et eksisterende array eller objekt til et andet array eller objekt. */}
-                <input id="keyword" type="text" placeholder="Søg" {...register("keyword", { required: true })} />
-                <button > <BsArrowRightShort /></button>
+                <input id="keyword" type="text" placeholder="Indtast søgeord" {...register("keyword", { required: true })} />
+                <button > <AiOutlineSearch /></button>
             </form>
             {/* Henter SearchResult og sætter det data ind på vores side */}
             {keyword && (
