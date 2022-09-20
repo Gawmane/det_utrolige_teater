@@ -27,6 +27,7 @@ export const Form = () => {
 
 
                     {/* Validering NAVN - tjekker om fullname er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
+                    <label htmlFor="text">Fornavn</label>
                     <input type="text" {...register("firstname", { required: true, pattern: /^[A-Za-z]+$/i, maxLength: 20 })} placeholder="Fornavn" />
                     {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
                     {errors.firstname && errors.firstname.type === "required" && <span>Du skal indtaste dit navn</span>}
@@ -35,23 +36,22 @@ export const Form = () => {
 
 
                     {/* Validering EFTERNAVN - tjekker om lastname er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
+                    <label htmlFor="text">Efternavn</label>
                     <input type="text" {...register("lastname", { required: true, pattern: /^[A-Za-z]+$/i })} placeholder="Efternavn" />
                     {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
                     {errors.lastname && errors.lastname.type === "required" && <span>Du skal indtaste dit efternavn</span>}
                     {errors.lastname && errors.lastname.type === "pattern" && <span>Dit efternavn må ikke indholde tal</span>}
 
-                    {/* Validering EMAIL - tjekker om email er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
-                    <input type="email" {...register("email", { required: true, pattern: /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i })} placeholder="Emailadresse" />
-                    {errors.email && errors.email.type === "required" && <span>Du skal indtaste din email</span>}
-                    {errors.email && errors.email.type === "pattern" && <span>Du skal indtaste en gyldigt email</span>}
 
 
                     {/* Validering VEJ/GADE OG HUSNUMMER - tjekker om address er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
+                    <label htmlFor="text">Vejnavn & nr</label>
                     <input type="text" {...register("address", { required: true })} placeholder="Gade/vej og husnummer" />
                     {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
                     {errors.address && errors.address.type === "required" && <span>Du skal indtaste din adresse</span>}
 
                     {/* Validering POSTNUMMER - tjekker om zipcode er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
+                    <label htmlFor="text">Postnummer & by</label>
                     <input type="number" {...register("zipcode", { required: true, min: 4, max: 4 })} placeholder="Postnr." />
                     {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
                     {errors.zipcode && errors.zipcode.type === "required" && <span>Du skal indtaste dit postnummer</span>}
@@ -65,27 +65,7 @@ export const Form = () => {
                     {errors.city && errors.city.type === "pattern" && <span>Navnet på byen må kun indholde bogstaver</span>}
 
 
-                    {/* Validering TELEFONNUMMER - tjekker om pbone er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
-                    <input type="text" {...register("phone", { required: true, max: 8, min: 8 })} placeholder="Telefonnummer" />
-                    {errors.phone && errors.phone.type === "required" && <span>Du skal indtaste dit telefonnummer</span>}
-                    {errors.phone && errors.phone.type === "min" && <span>Dit telefonnummer skal være 8 karakter lang</span>}
-                    {errors.phone && errors.phone.type === "max" && <span>Dit telefonnummer skal må ikke være længere end 8 karakter</span>}
-
-
-
-                    {/* TJEKBOK - er ikke required da det er et valg*/}
-                    <section className={style.checkmarks}>
-                        <label className={style.wrapper} > jeg aceptere vilkår
-                            <input type="checkbox"  {...register("checkbox", { required: false })} />
-                            <span className={style.checkmark}></span>
-                        </label>
-                    </section>
-
-
-
-
-
-                    <button type="submit" >Send</button>
+                    <button type="Godkend bestilling" >Send</button>
 
 
                 </form>
@@ -103,3 +83,6 @@ export const Form = () => {
 
     )
 }
+
+
+
