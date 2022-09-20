@@ -5,5 +5,8 @@ body {
     @include sidepadding;
     overflow-x: hidden;
 
-
+    .layoutTitle {
+        text-align: end;
+        color: $Primary;
+    }
 }

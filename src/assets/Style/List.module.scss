@@ -7,7 +7,32 @@
 
     figure {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 20% 80%;
+        height: 40vh;
+
+        img {
+            width: 40vh;
+        }
+
+        figcaption {
+            article {
+                text-align: end;
+                padding: 0.5em;
+
+                hr {
+                    width: 70%;
+                    border: solid 0.2px rgb(228, 228, 228);
+
+                }
+
+
+
+                h3 {
+
+                    color: $Primary;
+                }
+            }
+        }
     }
 
 
@@ -22,6 +47,12 @@
 
     figure {
 
+        img {
+            object-position: 50% 50%;
+            width: 100%;
+            object-fit: cover;
+
+        }
 
         hr {
             width: 50%;
@@ -47,6 +78,7 @@
     }
 }
 
+//Forstilliger og events liste
 .eventlist {
     @include figure;
 

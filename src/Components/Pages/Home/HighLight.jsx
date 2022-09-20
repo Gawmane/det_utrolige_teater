@@ -30,13 +30,14 @@ export const HighLight = () => {
 
                         <figcaption>
                             <article>
-                                <h4>{items.title}</h4>
-                                <p>{items.startdate} - {items.stopdate}</p>
                                 <p>{items.stage_name}</p>
+                                <p>{items.startdate} - {items.stopdate}</p>
+                                <hr />
+                                <h3>{items.title}</h3>
                                 <p>{items.genre}</p>
                             </article>
                         </figcaption>
-                        <img src={items.image} alt={items.title} />
+                        <img src={items.image_medium} alt={items.title} />
                     </figure>
 
                 )
