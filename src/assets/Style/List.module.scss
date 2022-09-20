@@ -169,3 +169,43 @@
 
     }
 }
+
+//Actors details
+.actorsdetails {
+    border: solid 1px $Primary;
+
+
+
+    figure {
+        display: grid;
+        grid-template-columns: auto auto;
+
+        figcaption {
+            padding-left: 1em;
+
+            h3 {
+                margin: 0;
+                padding: 0;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: $Primary;
+                @include space;
+            }
+        }
+    }
+}
+
+.actorbtn {
+    border: solid 0.5px $Primary;
+    background-color: $Primary;
+    text-transform: uppercase;
+    padding: 1em;
+
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+}

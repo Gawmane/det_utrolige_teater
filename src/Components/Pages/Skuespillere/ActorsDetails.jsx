@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 //Styling
 import { Layout } from "../../Tools/Layout/Layout";
+import style from "../../../assets/Style/List.module.scss"
 
 // Function Component til details
 export const ActorsDetails = () => {
@@ -31,24 +32,28 @@ export const ActorsDetails = () => {
         [actor_id])
 
     return (
-        // Kalder layout komponent med description
-        <Layout title="Skuespillere" description="detaljer">
+        <>
+            <section className={style.actorsdetails}>
+                {/* // Kalder layout komponent med description */}
+                <Layout title="Skuespillere" description="detaljer" >
 
-            {/* //Tjekker data og returner vores indhold hvis det er der, ellers null */}
-            {data && data ? (
-                <figure key={data.id}>
-                    <img src={data.image} alt={data.name} />
-                    <figcaption>
-                        <article>
-                            <h4>{data.name}</h4>
-                            <p>{data.description}</p>
-                        </article>
-                    </figcaption>
-                </figure>
+                    {/* //Tjekker data og returner vores indhold hvis det er der, ellers null */}
+                    {data && data ? (
+                        <figure key={data.id}>
+                            <img src={data.image} alt={data.name} />
+                            <figcaption>
+                                <article>
+                                    <h4>{data.name}</h4>
+                                    <p>{data.description}</p>
+                                </article>
+                            </figcaption>
+                        </figure>
 
-            ) : null}
+                    ) : null}
 
-
-        </Layout>
+                </Layout>
+            </section>
+            <button className={style.actorbtn}> <Link to="/actors"> Alle skuespillere</Link></button>
+        </>
     )
 }
