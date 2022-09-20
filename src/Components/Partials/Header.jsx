@@ -13,9 +13,10 @@ export const Header = () => {
                 <span>
                     <Search />
                     <Navigation />
-                    <BurgerMenu />
+
                 </span>
             </div>
+            <BurgerMenu />
             <HighLight />
         </header>
 
