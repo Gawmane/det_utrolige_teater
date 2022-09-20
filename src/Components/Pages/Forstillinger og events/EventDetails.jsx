@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 //Styling
 import { Layout } from "../../Tools/Layout/Layout";
+import { ReviewsList } from "../Fetch/List";
+import { NewReviews } from "../Fetch/Post";
 // import style from "../../../assets/Style/Houses.module.scss"
 
 // Function Component til details
@@ -58,6 +60,8 @@ export const EventDetails = () => {
                             </article>
                         </figcaption>
                     </figure>
+                    <ReviewsList />
+                    <NewReviews />
                 </section>
 
             ) : null}

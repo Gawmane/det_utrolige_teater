@@ -11,14 +11,14 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 //Liste der skal vises på vores side - liste kun med egen kommentar (admin)
-export const Admin = () => {
+export const AdminPanelReviews = () => {
     const { loginData } = useAuth();
     const [data, setData] = useState([]);
 
     useEffect(() => {
         const getAdmin = async () => {
             try {
-                const result = await axios.get(`https://api.mediehuset.net/`);
+                const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/reviews`);
                 if (result.data) {
                     setData(result.data.items);
                 }
@@ -33,7 +33,7 @@ export const Admin = () => {
     const deleteReviw = async (id) => {
         try {
             //Bruger authHeader til at tjekke om sessionStorage eksisterer
-            const result = await axios.delete(`https://api.mediehuset.net/${id}`, { headers: authHeader() });
+            const result = await axios.delete(`https://api.mediehuset.net/detutroligeteater/reviews/${id}`, { headers: authHeader() });
             if (result) {
                 submit()
             }
@@ -71,20 +71,21 @@ export const Admin = () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Anmedelse</th>
-                                <th>Dato</th>
+                                <th>Forestilling</th>
+                                <th>Emne</th>
+                                <th>Antal stjerner</th>
                                 <th>Rediger </th>
-                                <th>Slet</th>
+                                <th>slet </th>
+
                             </tr>
                         </thead>
                         <tbody>
                             {data.filter(user => user.user_id == loginData.user_id).map(getUser => {
                                 return (
                                     <tr key={getUser.id}>
-                                        <td>{getUser.title}</td>
-                                        <td>{getUser.content}</td>
-                                        <td>{getUser.created_friendly}</td>
+                                        <td>{getUser.created}</td>
+                                        <td>{getUser.subject}</td>
+                                        <td>{getUser.num_stars}</td>
                                         <td> <Link to={getUser.id}><AiFillEdit /></Link>   </td>
                                         <td><button onClick={() => deleteReviw(getUser.id)}><AiFillDelete /></button></td>
                                     </tr>

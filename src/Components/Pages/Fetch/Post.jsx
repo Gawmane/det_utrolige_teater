@@ -15,13 +15,12 @@ export const NewReviews = () => {
     const onSubmit = async (data) => {
         const formData = new FormData();
         //Tilføjer title,content,user_id,num_starts og active til objektet
-        formData.append('title', data.title);
-        formData.append('content', data.content);
-        formData.append('user_id', data.user_id);
+        formData.append('subject', data.subject);
+        formData.append('comment', data.comment);
+        formData.append('event_id', data.event_id);
         formData.append('num_stars', data.num_stars);
-        formData.append('active', 1);
         //Bruger authHeader til at tjekke om sessionStorage eksisterer
-        const result = await axios.post('https://api.mediehuset.net/', formData, { headers: authHeader() });
+        const result = await axios.post('https://api.mediehuset.net/detutroligeteater/reviews', formData, { headers: authHeader() });
 
         //Fejlhåndtering i console
         if (result) {
@@ -44,20 +43,20 @@ export const NewReviews = () => {
 
                     <span>
                         {/* Validering TITLE - tjekker om title er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
-                        <label>Title:</label>
-                        <input type="text" id="title" {...register("title", { required: true, maxLength: 20 })} />
+
+                        <input type="text" id="subject" {...register("subject", { required: true, maxLength: 20 })} placeholder="Emne" />
                         {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
-                        {errors.title && errors.title.type === "required" && <span>Du skal indtaste en title</span>}
-                        {errors.title && errors.title.type === "maxLength" && <span>Din title må ikke være længere end 20 karakter</span>}
+                        {errors.subject && errors.subject.type === "required" && <span>Du skal indtaste en title</span>}
+                        {errors.subject && errors.subject.type === "maxLength" && <span>Din title må ikke være længere end 20 karakter</span>}
 
                     </span>
 
                     <span>
                         {/* Validering MESSAGE - tjekker om message er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
                         <label>Anmeldelse:</label>
-                        <textarea id="content"{...register("content", { required: true })} ></textarea>
+                        <textarea id="comment"{...register("comment", { required: true })} placeholder="Kommentar"></textarea>
                         {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
-                        {errors.content && errors.content.type === "required" && <span>Du skal indtaste en besked</span>}
+                        {errors.comment && errors.comment.type === "required" && <span>Du skal indtaste en besked</span>}
 
                     </span>
 
@@ -70,7 +69,6 @@ export const NewReviews = () => {
                     </span>
 
                     <button type="submit" >Send</button>
-                    <button type='reset'>Nulstil</button>
 
 
                 </form>

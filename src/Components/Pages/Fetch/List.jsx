@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 //Styling
@@ -7,7 +6,7 @@ import axios from "axios";
 import { Layout } from "../../Tools/Layout/Layout"
 
 // Function Component til lister
-export const List = () => {
+export const ReviewsList = () => {
     const [data, setData] = useState([]);
     const { data_id } = useParams(0);
 
@@ -16,7 +15,7 @@ export const List = () => {
         //Async funktion til kald af api med hjælp fra appservice
         const getData = async () => {
             try {
-                const result = await axios.get('https://api.mediehuset.net/');
+                const result = await axios.get('https://api.mediehuset.net/detutroligeteater/reviews?event_id=6');
                 setData(result.data.items);
                 //Hvis fejl vis i console
             } catch (error) {
@@ -31,20 +30,21 @@ export const List = () => {
     //Return af vores inhold
     return (
         //Styring af title og beskrivelse via vores layout (seo)
-        <Layout title="Title" description="beskrivelse">
+        <Layout title="Liste af anmedelser" description="beskrivelse">
             <>
                 {/* //Mapper data */}
                 {data && data.map((items) => {
 
                     return (
-                        <figure key={items.id} >
-                            //Link til id
-                            <Link to={`${items.id}`} >
+                        <article key={items.id} >
+                            <p>{items.num_stars}</p>
+                            <p>{items.created}</p>
+                            <p>{items.subject}</p>
+                            <p>{items.comment}</p>
+                            <p>{items.user.firstname} {items.user.lastname}</p>
+                            <p></p>
+                        </article>
 
-                                <figcaption>
-                                </figcaption>
-                            </Link>
-                        </figure>
 
                     )
                 }

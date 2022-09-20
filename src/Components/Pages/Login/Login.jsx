@@ -7,6 +7,7 @@ import { useState } from "react"
 //Styling
 import style from "../../../assets/Style/Login.module.scss"
 import { Layout } from "../../Tools/Layout/Layout";
+import { AdminPanelReviews } from "../Fetch/Delete";
 
 // Function Component til login
 export const Login = () => {
@@ -75,8 +76,8 @@ export const Login = () => {
                     <p>du er logget ind som {loginData.username}</p>
                     {/* //Knap der kalder vores logout funktion og logger af */}
                     <button onClick={logOut}>Logout</button></>)}
-            {/* Pleaceholder til eventuel admin panel
-            <Admin />*/}
+            {/* Pleaceholder til eventuel admin panel*/}
+            <AdminPanelReviews />
 
         </Layout>
     );
