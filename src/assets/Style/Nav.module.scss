@@ -3,11 +3,10 @@
 
 //Fuld navigation
 
+
 .navigation {
     display: grid;
-    grid-template-columns: auto auto auto;
-
-
+    grid-template-columns: auto auto auto auto;
 
     //Gør at navigationen bliver fjernet når vi kommer ned i mobil størrelse
     @media (width < $mobile) {

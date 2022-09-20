@@ -2,4 +2,16 @@
 @import '../Helpers/variabler';
 
 
-header {}
+.header {
+    div {
+        display: grid;
+        grid-template-columns: auto auto;
+
+        img {
+
+            width: 20vw;
+        }
+
+    }
+
+}
