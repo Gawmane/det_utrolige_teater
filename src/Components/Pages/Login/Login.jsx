@@ -7,7 +7,7 @@ import { useState } from "react"
 //Styling
 import style from "../../../assets/Style/Login.module.scss"
 import { Layout } from "../../Tools/Layout/Layout";
-import { AdminPanelReviews } from "../Fetch/Delete";
+import { AdminPanelReviews } from "../Admin/ReviewDelete";
 
 // Function Component til login
 export const Login = () => {

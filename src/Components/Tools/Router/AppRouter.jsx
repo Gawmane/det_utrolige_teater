@@ -7,9 +7,10 @@ import { Home } from '../../Pages/Home/Home'
 import { Login } from '../../Pages/Login/Login'
 import { EventList } from '../../Pages/Forstillinger og events/EventList'
 import { EventDetails } from '../../Pages/Forstillinger og events/EventDetails'
-import { EditReviews } from '../../Pages/Fetch/Put'
+import { EditReviews } from '../../Pages/Admin/ReviewPut'
 import { ActorsList } from '../../Pages/Skuespillere/ActorsList'
 import { ActorsDetails } from '../../Pages/Skuespillere/ActorsDetails'
+import { Form } from '../../Pages/Bestilling/Form'
 
 
 export const AppRouter = () => {
@@ -34,7 +35,7 @@ export const AppRouter = () => {
                 <Route path=":review_id" element={<EditReviews />} />
 
             </Route>
-
+            <Route path="/bestilling" element={<Form />}></Route>
             <Route path='*' element={<NotFound />} />
         </Routes>
     )

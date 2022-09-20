@@ -48,7 +48,7 @@ export const EventList = () => {
                                         <p>{items.stage_name}</p>
                                     </span>
                                     <button><Link to={`${items.id}`} >Læs mere</Link></button>
-                                    <button><Link to={`/boliger/${items.id}`} >Køb billet</Link></button>
+                                    <button><Link to={`/bestilling`} >Køb billet</Link></button>
                                 </article>
                             </figcaption>
                         </figure>
