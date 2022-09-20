@@ -29,18 +29,21 @@
 //Article under Result der tager alt indhold på det søgte ord
 
 .searchlist {
-
-    margin-bottom: 10em;
-    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    width: 30%;
+    left: 80%;
     background-color: $Primary;
     display: block;
 
-    @include figure;
+    // @include figure;
 
 
     figure {
         border-color: #fff;
-        margin-left: 0;
+
         display: grid;
         grid-template-columns: auto auto;
 
@@ -52,11 +55,6 @@
             width: 5vh;
         }
 
-        figcaption {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            font-size: 2vh;
-            margin: auto;
-        }
+
     }
 }

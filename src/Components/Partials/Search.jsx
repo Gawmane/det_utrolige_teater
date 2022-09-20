@@ -80,8 +80,11 @@ const Result = (props) => {
                 return (
                     //Linker til detajle siden med det id der passer sammen og kalder removesearchresult der fjerner listen
                     <Link to={`/events/${item.id}`} onClick={RemoveSearchResult} >
-                        <p key={item.id}> {item.title}</p>
-
+                        <figure key={item.id}>
+                            <img src={item.image_small} alt={item.title} />
+                            <figcaption>
+                                <p > {item.title}</p></figcaption>
+                        </figure>
                     </Link>
 
                 )
