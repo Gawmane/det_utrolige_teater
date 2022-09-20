@@ -73,6 +73,7 @@ export const Login = () => {
             ) : (
                 //Hvis bruger er logget ind - vis logindata
                 <>
+                    <Layout title="Min side" description="admin side" ></Layout>
                     <p>du er logget ind som {loginData.username}</p>
                     {/* //Knap der kalder vores logout funktion og logger af */}
                     <button onClick={logOut}>Logout</button></>)}
