@@ -42,16 +42,16 @@ export const EventList = () => {
 
                         return (
                             <figure key={items.id}>
-                                <img src={items.image} alt={items.title} />
+                                <img src={items.image_small} alt={items.title} />
                                 <figcaption>
                                     <article>
-                                        <h4>{items.title}</h4>
+                                        <h3>{items.title}</h3>
                                         <span>
-                                            <p>{items.startdate} - {items.stopdate}</p>
                                             <p>{items.stage_name}</p>
+                                            <p>{items.startdate} - {items.stopdate}</p>
                                         </span>
-                                        <button><Link to={`${items.id}`} >Læs mere</Link></button>
-                                        <button><Link to={`/bestilling`} >Køb billet</Link></button>
+                                        <button className={style.btnreadmore}><Link to={`${items.id}`}  >Læs mere</Link></button>
+                                        <button className={style.btnbuy}><Link to={`/bestilling`} >Køb billet</Link></button>
                                     </article>
                                 </figcaption>
                             </figure>

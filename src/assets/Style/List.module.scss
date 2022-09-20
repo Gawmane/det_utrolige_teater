@@ -49,11 +49,46 @@
 
 .eventlist {
     @include figure;
-    @include button;
+
 
     figure {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 10% auto;
+        height: 15%;
+        width: 100%;
+        background-color: transparent;
+        margin-left: 0;
+        margin-right: 0;
+
+
+
+
+        figcaption {
+            article {
+                display: grid;
+                grid-template-columns: 25% 50% 12.5% 12.5%;
+                @include button;
+
+                h3 {
+                    border-right: solid 0.2px rgb(228, 228, 228);
+                    padding: 0.5em;
+                    color: $Primary;
+                }
+
+                span {
+                    padding-left: 0.5em;
+                    display: grid;
+                    grid-template-rows: auto auto;
+
+
+                }
+
+
+            }
+
+            background-color: transparent;
+        }
     }
+
 
 }
