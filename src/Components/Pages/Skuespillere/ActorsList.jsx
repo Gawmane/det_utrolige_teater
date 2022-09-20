@@ -42,11 +42,12 @@ export const ActorsList = () => {
                             <img src={items.image} alt={items.name} />
                             <figcaption>
                                 <article>
-                                    <h4>{items.name}</h4>
-                                    <p>{items.description}</p>
-                                    <button><Link to={`${items.id}`} >Læs mere</Link></button>
+                                    <h3>{items.name}</h3>
+                                    <p>{items.description.substring(0, 480) + '...'}</p>
+
                                 </article>
                             </figcaption>
+                            <button className={style.btnreadmore}><Link to={`${items.id}`} >Læs mere</Link></button>
                         </figure>
 
                     )

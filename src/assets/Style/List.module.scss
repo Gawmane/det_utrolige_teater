@@ -21,7 +21,7 @@
 
                 hr {
                     width: 70%;
-                    border: solid 0.2px rgb(228, 228, 228);
+                    border: $hrline;
 
                 }
 
@@ -56,7 +56,7 @@
 
         hr {
             width: 50%;
-            border: solid 0.2px rgb(228, 228, 228);
+            border: $hrline;
 
         }
 
@@ -102,7 +102,7 @@
                 @include button;
 
                 h3 {
-                    border-right: solid 0.2px rgb(228, 228, 228);
+                    border-right: $hrline;
                     padding: 0.5em;
                     color: $Primary;
                 }
@@ -123,4 +123,49 @@
     }
 
 
+}
+
+//Skuespiller liste
+.actorlist {
+    border: solid 1px $Primary;
+
+
+    figure {
+        border-bottom: $hrline;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        height: 30vh;
+
+
+        img {
+            height: 25vh;
+        }
+
+        figcaption {
+            padding-left: 1em;
+
+            h3 {
+                margin: 0;
+                padding: 0;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: $Primary;
+            }
+        }
+
+        .btnreadmore {
+            background-color: $Tertiary;
+            padding: 1em;
+            height: 7vh;
+            margin: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+    }
 }
