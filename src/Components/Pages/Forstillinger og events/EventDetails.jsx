@@ -53,19 +53,7 @@ export const EventDetails = () => {
                             <article>
                                 <h3>Medvirkende</h3>
 
-                                {/* {data && data.actors.map((actors) => {
-
-                                    return (
-                                        <figure>
-                                            <img src={actors.image} alt={actors.name} />
-                                            <figcaption>
-                                                <p>{actors.name}</p>
-                                            </figcaption>
-                                        </figure>
-
-                                    )
-
-                                })} */}
+                                {/* <ActorsListDetails /> */}
 
                             </article>
                         </figcaption>
@@ -78,4 +66,46 @@ export const EventDetails = () => {
         </Layout>
     )
 }
+
+// export const ActorsListDetails = () => {
+//     const { data_id } = useParams(0);
+//     //Får objekt ud {} - fordi [] arrey kommer kun ud ved lister
+//     const [data, setData] = useState({});
+
+
+
+//     // Hook til styring af renders
+//     useEffect(() => {
+//         const getData = async () => {
+//             try {
+//                 const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/${data_id}`);
+//                 if (result.data) {
+//                     setData(result.data.item.actors);
+//                 }
+//             } catch (error) {
+//                 console.log(error)
+//             }
+//         }
+//         // Funktionskald
+//         getData()
+//     },
+//         // Dependency array - hvis data_id  ændres renderes komponenten
+//         [data_id])
+
+//     return (
+//         <>
+//             {data && data.map((actors) => {
+//                 return (
+//                     <figure>
+//                         <img src={actors.image} alt={actors.name} />
+//                         <figcaption>
+//                             <p>{actors.name}</p>
+//                         </figcaption>
+//                     </figure>
+//                 )
+//             })}
+//         </>
+
+//     )
+// }
 
