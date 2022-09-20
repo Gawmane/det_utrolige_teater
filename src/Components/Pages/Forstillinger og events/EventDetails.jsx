@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 //Styling
 import { Layout } from "../../Tools/Layout/Layout";
+import style from "../../../assets/Style/List.module.scss"
+
 import { ReviewsList } from "../Admin/List";
 import { NewReviews } from "../Admin/Post";
-// import style from "../../../assets/Style/Houses.module.scss"
 
 // Function Component til details
 export const EventDetails = () => {
@@ -39,21 +40,23 @@ export const EventDetails = () => {
 
             {/* //Tjekker data og returner vores indhold hvis det er der, ellers null */}
             {data && data ? (
-                <section key={data.id}>
+                <section key={data.id} className={style.eventdetails}>
                     <figure key={data.id}>
-                        <p>{data.stage_name}</p>
-                        <p>{data.startdate} - {data.stopdate}</p>
-                        <p>Billetpris: {data.price} DKK</p>
                         <img src={data.image} alt={data.title} />
                         <figcaption>
                             <article>
-                                <h2>{data.title}</h2>
-                                <h3>{data.genre}</h3>
+                                <span>
+                                    <p><b>{data.stage_name}</b></p>
+                                    <p>{data.startdate} - {data.stopdate}</p>
+                                    <p>Billetpris: {data.price} DKK</p>
+                                </span>
+                                <h3>{data.title}</h3>
+                                <h4>{data.genre}</h4>
                                 <button><Link to={`/${data.id}`} >Køb billet</Link></button>
                                 <p>{data.description}</p>
                             </article>
                             <article>
-                                <h3>Medvirkende</h3>
+                                <h4>Medvirkende</h4>
 
                                 {/* <ActorsListDetails /> */}
 

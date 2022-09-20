@@ -92,9 +92,6 @@
         margin-left: 0;
         margin-right: 0;
 
-
-
-
         figcaption {
             article {
                 display: grid;
@@ -119,6 +116,42 @@
             }
 
             background-color: transparent;
+        }
+    }
+
+
+}
+
+//Event details
+.eventdetails {
+    @include figure;
+    @include button;
+
+    figure {
+        img {
+            width: 10vw;
+        }
+
+        figcaption {
+            span {
+                border-bottom: $hrline;
+
+                p {
+                    color: black;
+                    text-transform: uppercase
+                }
+            }
+
+            button {
+                background-color: $Primary;
+                left: 90%;
+                position: absolute;
+            }
+
+            p {
+                @include space;
+                color: $Primary;
+            }
         }
     }
 
