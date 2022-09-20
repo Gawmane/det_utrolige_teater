@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 //Styling
 import { Layout } from "../../Tools/Layout/Layout";
-import { ReviewsList } from "../Admin/ReviewList";
-import { NewReviews } from "../Admin/ReviewPost";
+import { ReviewsList } from "../Admin/List";
+import { NewReviews } from "../Admin/Post";
 // import style from "../../../assets/Style/Houses.module.scss"
 
 // Function Component til details

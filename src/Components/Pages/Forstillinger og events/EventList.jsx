@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { HighLight } from '../Home/HighLight'
 //Styling
 import style from "../../../assets/Style/List.module.scss"
 
@@ -31,32 +32,36 @@ export const EventList = () => {
 
     //Return af vores inhold
     return (
-        //Styring af title og beskrivelse via vores layout (seo)
-        <Layout title="Title" description="beskrivelse">
-            <section className={style.eventlist}>
-                {/* //Mapper data */}
-                {data && data.map((items) => {
+        <>
+            <HighLight />
+            {/* //Styring af title og beskrivelse via vores layout (seo) */}
+            <Layout title="Oversigt" description="Oversigt over de forestillinger der er">
+                <section className={style.eventlist}>
+                    {/* //Mapper data */}
+                    {data && data.map((items) => {
 
-                    return (
-                        <figure key={items.id}>
-                            <img src={items.image} alt={items.title} />
-                            <figcaption>
-                                <article>
-                                    <h4>{items.title}</h4>
-                                    <span>
-                                        <p>{items.startdate} - {items.stopdate}</p>
-                                        <p>{items.stage_name}</p>
-                                    </span>
-                                    <button><Link to={`${items.id}`} >Læs mere</Link></button>
-                                    <button><Link to={`/bestilling`} >Køb billet</Link></button>
-                                </article>
-                            </figcaption>
-                        </figure>
+                        return (
+                            <figure key={items.id}>
+                                <img src={items.image} alt={items.title} />
+                                <figcaption>
+                                    <article>
+                                        <h4>{items.title}</h4>
+                                        <span>
+                                            <p>{items.startdate} - {items.stopdate}</p>
+                                            <p>{items.stage_name}</p>
+                                        </span>
+                                        <button><Link to={`${items.id}`} >Læs mere</Link></button>
+                                        <button><Link to={`/bestilling`} >Køb billet</Link></button>
+                                    </article>
+                                </figcaption>
+                            </figure>
 
-                    )
-                }
+                        )
+                    }
 
-                )}
-            </section></Layout>
+                    )}
+                </section>
+            </Layout>
+        </>
     )
 }
