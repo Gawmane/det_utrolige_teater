@@ -6,7 +6,9 @@ body {
     overflow-x: hidden;
 
     .layoutTitle {
-        text-align: end;
+        font-family: $headerFont;
+        font-weight: 200;
+        font-size: 30pt;
         color: $Primary;
     }
 }

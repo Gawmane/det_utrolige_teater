@@ -39,8 +39,9 @@ export const EventList = () => {
         <>
             <HighLight />
             {/* //Styring af title og beskrivelse via vores layout (seo) */}
-            <Layout title="Oversigt" description="Oversigt over de forestillinger der er">
-                <section className={style.eventlist}>
+
+            <section className={style.eventlist}>
+                <Layout title="Oversigt" description="Oversigt over de forestillinger der er">
                     {/* //Mapper data */}
                     {data && data.map((items) => {
                         //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
@@ -69,8 +70,8 @@ export const EventList = () => {
                     }
 
                     )}
-                </section>
-            </Layout>
+                </Layout>
+            </section>
         </>
     )
 }

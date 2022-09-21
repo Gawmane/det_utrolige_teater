@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../Tools/Appservice/Auth";
 import { authHeader } from "../../Tools/Appservice/AuthHeader";
 import axios from "axios";
+import style from "../../../assets/Style/Login.module.scss"
 
 //Styling
-import { AiFillEdit, AiFillDelete } from "react-icons/ai";
+import { AiFillEdit, AiOutlineCloseCircle } from "react-icons/ai";
 //NPM -  react-confirm-alert
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import Moment from 'moment'
+
 
 //Liste der skal vises på vores side - liste kun med egen kommentar (admin)
 export const AdminPanelReviews = () => {
@@ -76,7 +77,7 @@ export const AdminPanelReviews = () => {
                                 <th>Emne</th>
                                 <th>Antal stjerner</th>
                                 <th>Rediger </th>
-                                <th>slet </th>
+
 
                             </tr>
                         </thead>
@@ -88,8 +89,8 @@ export const AdminPanelReviews = () => {
                                         <td>{getUser.event_title}</td>
                                         <td>{getUser.subject}</td>
                                         <td>{getUser.num_stars}</td>
-                                        <td> <Link to={getUser.id}><AiFillEdit /></Link>   </td>
-                                        <td><button onClick={() => deleteReviw(getUser.id)}><AiFillDelete /></button></td>
+                                        <td> <Link to={getUser.id} className={style.edit}><AiFillEdit /></Link>
+                                            <button onClick={() => deleteReviw(getUser.id)} className={style.delete}><AiOutlineCloseCircle /></button></td>
                                     </tr>
                                 )
                             })}

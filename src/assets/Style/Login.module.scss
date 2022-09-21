@@ -1,30 +1,115 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
 
+.loginwrapper {
+    border: solid 1px $Primary;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-family: $TextFont;
+    margin-bottom: 5%;
 
+    .flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: stretch;
 
-.loginform {
-    @include sidepadding;
-    height: 100%;
+        button {
+            @include button;
+            background-color: $Primary;
+            color: white;
+            padding: 1em;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            border: none;
+            cursor: pointer;
 
-    input {
-        @include input;
-        margin-left: 0;
-        margin-bottom: 10px;
-        padding: 5px 5px;
-        display: block;
-        width: 40%;
-        height: 3vh;
+        }
+
+        p {
+            text-transform: uppercase;
+
+        }
 
     }
 
-    //Style af knapper
+    .loginform {
+        @include sidepadding;
+        height: 100%;
+
+        input {
+            @include input;
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding: 5px 5px;
+            display: block;
+            width: 40%;
+            height: 3vh;
+
+        }
+
+        //Style af knapper
+        button {
+            @include button;
+            background-color: $Primary;
+            color: white;
+            padding: 1em;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+
+        }
+
+    }
+
+    //Min side/admin
+    h3 {
+        svg {
+            color: $Secondary;
+
+        }
+    }
+
     button {
-        @include button;
-        background-color: black;
-        padding: 1em;
+        padding: 0.5em;
         margin-right: 0.5em;
         margin-bottom: 0.5em;
+        border: none;
     }
+
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: white;
+        text-transform: uppercase;
+        margin-bottom: 5%;
+
+        td {
+            border-bottom: $hrline;
+        }
+
+        th {
+
+            text-align: left;
+
+
+        }
+
+        .delete {
+            background-color: transparent;
+            color: red;
+            text-align: end;
+        }
+
+        .edit {
+            color: green;
+            text-align: left;
+
+        }
+    }
+
+
 
 }

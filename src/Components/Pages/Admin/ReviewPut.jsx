@@ -23,6 +23,8 @@ export const EditReviews = () => {
         formData.append('subject', data.subject);
         formData.append('comment', data.comment);
         formData.append('num_stars', data.num_stars);
+        formData.append('active', 1);
+
         // Bruger authHeader til at tjekke om sessionStorage eksisterer
         const result = await axios.put('https://api.mediehuset.net/detutroligeteater/reviews', formData, { headers: authHeader() });
         //Fejlhåndtering i console
@@ -65,7 +67,7 @@ export const EditReviews = () => {
                     <span>
                         {/* Validering MESSAGE - tjekker om message er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
                         <label>Antal stjerner:</label>
-                        <input type="number" id="num_stars"{...register("num_stars", { required: true })} ><AiOutlineStar /></input>
+                        <input type="number" id="num_stars"{...register("num_stars", { required: true })} />
                         {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
                         {errors.num_stars && errors.num_stars.type === "required" && <span>Du skal vælge antal stjerner</span>}
                     </span>
