@@ -35,26 +35,23 @@
     position: absolute;
     width: 30%;
     left: 80%;
+    margin-top: -2em;
     background-color: $Primary;
     display: block;
 
-    // @include figure;
-
-
-    figure {
-        border-color: #fff;
-
-        display: grid;
-        grid-template-columns: auto auto;
-
-        &:hover {
-            color: #fff;
-        }
-
-        img {
-            width: 5vh;
-        }
-
+    h3 {
+        padding: 0.5em;
+        color: #fff;
 
     }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 0.5em;
+    }
+
+
+
 }
