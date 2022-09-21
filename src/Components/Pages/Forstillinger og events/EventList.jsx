@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { HighLight } from '../Home/HighLight'
+import Moment from 'moment'
+
 //Styling
 import style from "../../../assets/Style/List.module.scss"
 
@@ -30,6 +32,8 @@ export const EventList = () => {
         // Dependency array - hvis det ændres renderes komponenten
     }, [setData]);
 
+    //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
+
     //Return af vores inhold
     return (
         <>
@@ -39,6 +43,9 @@ export const EventList = () => {
                 <section className={style.eventlist}>
                     {/* //Mapper data */}
                     {data && data.map((items) => {
+                        //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
+                        const Startdate = Moment(items.startdate).format("DD-MMMM");
+                        const Stopdate = Moment(items.stopdate).format("DD-MMMM YYYY");
 
                         return (
                             <figure key={items.id}>
@@ -47,8 +54,10 @@ export const EventList = () => {
                                     <article>
                                         <h3>{items.title}</h3>
                                         <span>
+
                                             <p>{items.stage_name}</p>
-                                            <p>{items.startdate} - {items.stopdate}</p>
+                                            <p>{Startdate} - {Stopdate}</p>
+
                                         </span>
                                         <button className={style.btnreadmore}><Link to={`${items.id}`}  >Læs mere</Link></button>
                                         <button className={style.btnbuy}><Link to={`/bestilling`} >Køb billet</Link></button>

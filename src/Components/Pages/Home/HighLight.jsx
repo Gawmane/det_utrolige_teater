@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import style from "../../../assets/Style/List.module.scss"
+import Moment from 'moment'
 
 export const HighLight = () => {
     const [data, setData] = useState([]);
@@ -25,13 +26,16 @@ export const HighLight = () => {
     return (
         <section className={style.highlight}>
             {data && data.map((items) => {
+                //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
+                const Startdate = Moment(items.startdate).format("DD-MMMM");
+                const Stopdate = Moment(items.stopdate).format("DD-MMMM YYYY");
                 return (
                     <figure key={items.id}>
 
                         <figcaption>
                             <article>
                                 <p>{items.stage_name}</p>
-                                <p>{items.startdate} - {items.stopdate}</p>
+                                <p>{Startdate} - {Stopdate}</p>
                                 <hr />
                                 <h3>{items.title}</h3>
                                 <p>{items.genre}</p>

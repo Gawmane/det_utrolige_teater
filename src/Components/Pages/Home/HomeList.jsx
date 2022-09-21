@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Moment from 'moment'
+
 import style from "../../../assets/Style/List.module.scss"
 export const HomeList = () => {
     const [data, setData] = useState([]);
@@ -25,13 +27,16 @@ export const HomeList = () => {
     return (
         <section className={style.homelist}>
             {data && data.map((items) => {
+                //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
+                const Startdate = Moment(items.startdate).format("DD-MMMM");
+                const Stopdate = Moment(items.stopdate).format("DD-MMMM YYYY");
                 return (
                     <figure key={items.id}>
                         <img src={items.image} alt={items.title} />
                         <figcaption>
                             <article>
                                 <p>{items.stage_name}</p>
-                                <p>{items.startdate} - {items.stopdate}</p>
+                                <p>{Startdate} - {Stopdate}</p>
                                 <hr />
                                 <h3>{items.title}</h3>
                                 <p>{items.genre}</p>

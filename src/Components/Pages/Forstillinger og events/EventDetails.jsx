@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Moment from 'moment'
+
 //Styling
 import { Layout } from "../../Tools/Layout/Layout";
 import style from "../../../assets/Style/List.module.scss"
@@ -33,20 +35,32 @@ export const EventDetails = () => {
         // Dependency array - hvis data_id  ændres renderes komponenten
         [event_id])
 
+    //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
+    //Laves som funktion her da vi ikke mapper
+    const StartDate = () => {
+        const startdate = Moment(data.startdate).format("DD.MMMM YYYY")
+        return startdate
+    }
+    const StopDate = () => {
+        const stopdate = Moment(data.stopdate).format("DD MMMM YYYY")
+        return stopdate
+    }
     return (
         // Kalder layout komponent med description
         <Layout description="detaljer">
 
             {/* //Tjekker data og returner vores indhold hvis det er der, ellers null */}
             {data && data ? (
+
                 <section key={data.id} className={style.eventdetails}>
                     <figure key={data.id}>
                         <img src={data.image} alt={data.title} />
                         <figcaption>
                             <article>
                                 <span>
+
                                     <p><b>{data.stage_name}</b></p>
-                                    <p>{data.startdate} - {data.stopdate}</p>
+                                    <p>{StartDate()} - {StopDate()}</p>
                                     <p>Billetpris: {data.price} DKK</p>
                                 </span>
                                 <h3>{data.title}</h3>

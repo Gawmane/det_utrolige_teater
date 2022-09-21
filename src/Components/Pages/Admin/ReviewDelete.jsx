@@ -9,6 +9,7 @@ import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 //NPM -  react-confirm-alert
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import Moment from 'moment'
 
 //Liste der skal vises på vores side - liste kun med egen kommentar (admin)
 export const AdminPanelReviews = () => {
@@ -81,9 +82,10 @@ export const AdminPanelReviews = () => {
                         </thead>
                         <tbody>
                             {data.filter(user => user.user_id == loginData.user_id).map(getUser => {
+
                                 return (
                                     <tr key={getUser.id}>
-                                        <td>{getUser.created}</td>
+                                        <td>{getUser.event_title}</td>
                                         <td>{getUser.subject}</td>
                                         <td>{getUser.num_stars}</td>
                                         <td> <Link to={getUser.id}><AiFillEdit /></Link>   </td>
