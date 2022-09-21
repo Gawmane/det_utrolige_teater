@@ -32,7 +32,7 @@ export const ActorsDetails = () => {
         [actor_id])
 
     return (
-        <>
+        <section className={style.actorswrapper}>
             <section className={style.actorsdetails}>
                 {/* // Kalder layout komponent med description */}
                 <Layout title="Skuespillere" description="detaljer" >
@@ -54,6 +54,6 @@ export const ActorsDetails = () => {
                 </Layout>
             </section>
             <button className={style.actorbtn}> <Link to="/actors"> Alle skuespillere</Link></button>
-        </>
+        </section>
     )
 }
