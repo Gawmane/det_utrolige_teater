@@ -56,8 +56,8 @@ export const Login = () => {
             {/* Vis hvis form er falsk */}
             {!loginData && !loginData.username ? (
                 <Layout title="Login" description="Login side" >
-                    // Sætter onSubmit event med closure function
-                    //closure = sender funktion videre som tager en funktion som argument og så lukker - sendlogin lukker handelSubmit
+                    {/* // Sætter onSubmit event med closure function
+                    //closure = sender funktion videre som tager en funktion som argument og så lukker - sendlogin lukker handelSubmit*/}
                     <form onSubmit={handleSubmit(sendLogin)} className={style.loginform}>
 
                         {/* //Spread operator(...) - giver mulighed for at kopiere hele eller dele af et eksisterende array eller objekt til et andet array eller objekt. */}
