@@ -5,7 +5,7 @@ import { authHeader } from "../../Tools/Appservice/AuthHeader";
 import { Link } from "react-router-dom";
 
 //Funktion til oprettelse af reviews
-export const NewReviews = () => {
+export const PostReviews = (props) => {
     //UseState hook - false 
     const [formStatus, setFormStatus] = useState(false);
     //Form Hook til handelsubmit
@@ -17,8 +17,9 @@ export const NewReviews = () => {
         //Tilføjer title,content,user_id,num_starts og active til objektet
         formData.append('subject', data.subject);
         formData.append('comment', data.comment);
-        formData.append('event_id', data.event_id);
+        formData.append('event_id', props.event_id);
         formData.append('num_stars', data.num_stars);
+        formData.append('active', 1);
         //Bruger authHeader til at tjekke om sessionStorage eksisterer
         const result = await axios.post('https://api.mediehuset.net/detutroligeteater/reviews', formData, { headers: authHeader() });
 

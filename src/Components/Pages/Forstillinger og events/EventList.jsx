@@ -11,7 +11,7 @@ import { Layout } from "../../Tools/Layout/Layout"
 // Function Component til lister
 export const EventList = () => {
     const [data, setData] = useState([]);
-    const { data_id } = useParams(0);
+    const { event_id } = useParams(0);
 
     // useEffect hook - styring af renders
     useEffect(() => {

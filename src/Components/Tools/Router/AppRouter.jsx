@@ -26,7 +26,7 @@ export const AppRouter = () => {
             {/* ROUTER PLACEHOLDER TIL LISTE MED DETALJE VISNING */}
             <Route path='/events'>
                 <Route index element={<EventList />} ></Route>
-                <Route path=":data_id" element={<EventDetails />}></Route>
+                <Route path=":event_id" element={<EventDetails />}></Route>
             </Route>
 
             <Route path="/login">
