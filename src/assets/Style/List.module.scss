@@ -131,6 +131,9 @@
 .eventdetails {
     @include figure;
     @include button;
+    border: solid 1px $Primary;
+    margin-bottom: 5%;
+
 
     figure {
         img {

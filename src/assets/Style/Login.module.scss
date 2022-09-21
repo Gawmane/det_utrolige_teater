@@ -112,3 +112,96 @@
 
 
 }
+
+//Review form
+.reviewwrapper {
+
+    background-color: $Secondary;
+    color: white;
+    padding-left: 1em;
+
+    .loginevent {
+        section {
+            border: none;
+
+            h1 {
+                display: none;
+            }
+
+
+
+            form {
+                label {
+                    display: none;
+                }
+
+                input {
+                    @include input;
+
+                    display: block;
+
+
+                }
+
+                button {
+                    @include button;
+                    background-color: rgb(144, 247, 184);
+                    color: white;
+                    padding: 1em;
+                    margin-left: 2em;
+                    margin-bottom: 0.5em;
+
+
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+}
+
+//Login delen på review
+//Formen fra post review
+.postreview {
+
+    form {
+        height: 50%;
+
+        input {
+            @include input;
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding: 5px 5px;
+            display: block;
+            width: 80%;
+            height: 3vh;
+
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            @include input;
+            margin-left: 0;
+            padding: 5px 5px;
+            display: inline;
+            width: 80%;
+            height: 20vh;
+        }
+
+        //Style af knapper
+        button {
+            @include button;
+            background-color: $Primary;
+            color: white;
+            padding: 1em;
+            margin-left: 2em;
+            margin-bottom: 0.5em;
+
+
+            display: inline;
+
+        }
+
+    }
+}

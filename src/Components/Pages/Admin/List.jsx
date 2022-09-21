@@ -4,17 +4,17 @@ import axios from "axios";
 import { useAuth } from "../../Tools/Appservice/Auth";
 import Moment from 'moment'
 //Styling
-// import style from "../../../assets/Style/pr.module.scss"
+import style from "../../../assets/Style/Login.module.scss"
 import { Layout } from "../../Tools/Layout/Layout"
 import { PostReviews } from "./Post";
 import { Login } from "../Login/Login";
 import { AiOutlineStar } from "react-icons/ai";
-
+import { BsCardText } from "react-icons/bs";
 // Function Component til lister
 export const ReviewsList = () => {
     const [data, setData] = useState([]);
     const { event_id } = useParams(0);
-    const { loginData } = useAuth
+    const { loginData } = useAuth(Login)
 
 
     // useEffect hook - styring af renders
@@ -57,12 +57,25 @@ export const ReviewsList = () => {
 
 
                     )
-                }
+                })}
+                <section className={style.reviewwrapper}>
+                    <h3><BsCardText /> Skriv en anmedelse</h3>
+                    {!loginData.access_token ? (
+                        <>
 
-                )}
+                            <p>Du skal være logget ind for at skrive en anmedelse</p>
+                            <div className={style.loginevent}><Login /></div>
+                        </>
+                    ) :
+                        (
+                            <>
+                                <PostReviews event_id={event_id} />
+                            </>
+                        )}
+                </section>
 
-                <PostReviews event_id={event_id} />
 
-            </></Layout>
+            </>
+        </Layout>
     )
 }

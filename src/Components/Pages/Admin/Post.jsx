@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import axios from "axios";
 import { authHeader } from "../../Tools/Appservice/AuthHeader";
 import { Link } from "react-router-dom";
+import style from "../../../assets/Style/Login.module.scss"
 
 //Funktion til oprettelse af reviews
 export const PostReviews = (props) => {
@@ -34,16 +35,23 @@ export const PostReviews = (props) => {
         setFormStatus(true)
     }
     return (
-        <section>
+        <section className={style.postreview}>
 
             {/* Conditional ternary operator - vis input - efter tryk submit vis message */}
             {!formStatus ?
 
                 // handleSubmit validere  inputs inden kald af "onSubmit" 
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <span>
+                        {/* Validering NUM_STARS - tjekker om message er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
+                        <label>Antal stjerner:</label>
+                        <input type="number" id="num_stars"{...register("num_stars", { required: true })} ></input>
+                        {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
+                        {errors.num_stars && errors.num_stars.type === "required" && <span>Du skal vælge antal stjerner</span>}
+                    </span>
 
                     <span>
-                        {/* Validering TITLE - tjekker om title er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
+                        {/* Validering SJUBJECT - tjekker om title er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
 
                         <input type="text" id="subject" {...register("subject", { required: true, maxLength: 20 })} placeholder="Emne" />
                         {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
@@ -53,21 +61,14 @@ export const PostReviews = (props) => {
                     </span>
 
                     <span>
-                        {/* Validering MESSAGE - tjekker om message er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
-                        <label>Anmeldelse:</label>
+                        {/* Validering COMMENT - tjekker om message er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
+
                         <textarea id="comment"{...register("comment", { required: true })} placeholder="Kommentar"></textarea>
                         {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
                         {errors.comment && errors.comment.type === "required" && <span>Du skal indtaste en besked</span>}
 
                     </span>
 
-                    <span>
-                        {/* Validering MESSAGE - tjekker om message er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
-                        <label>Antal stjerner:</label>
-                        <input type="number" id="num_stars"{...register("num_stars", { required: true })} ></input>
-                        {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
-                        {errors.num_stars && errors.num_stars.type === "required" && <span>Du skal vælge antal stjerner</span>}
-                    </span>
 
                     <button type="submit" >Send</button>
 
