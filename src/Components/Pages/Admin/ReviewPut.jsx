@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useState } from "react"; import { authHeader } from "../../Tools/Appservice/AuthHeader";
+import { AiOutlineStar } from "react-icons/ai";
+
 
 
 //Funktion til opdatering af reviews
@@ -63,7 +65,7 @@ export const EditReviews = () => {
                     <span>
                         {/* Validering MESSAGE - tjekker om message er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator) */}
                         <label>Antal stjerner:</label>
-                        <input type="number" id="num_stars"{...register("num_stars", { required: true })} ></input>
+                        <input type="number" id="num_stars"{...register("num_stars", { required: true })} ><AiOutlineStar /></input>
                         {/* Fejlmeddelse der skifter mellem hvilken type der skal sendes. ex pattern */}
                         {errors.num_stars && errors.num_stars.type === "required" && <span>Du skal vælge antal stjerner</span>}
                     </span>

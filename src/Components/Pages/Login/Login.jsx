@@ -16,6 +16,7 @@ export const Login = () => {
     const { loginData, setLoginData } = useAuth();
     const [message, setMessage] = useState('');
 
+
     // Funktion til at kalde api med form data
     const sendLogin = async data => {
         const formData = new FormData();
@@ -76,7 +77,7 @@ export const Login = () => {
                     <Layout title="Min side" description="admin side" ></Layout>
                     <p>du er logget ind som {loginData.username}</p>
                     {/* //Knap der kalder vores logout funktion og logger af */}
-                    <button onClick={logOut}>Logout</button></>)}
+                    <button onClick={logOut} >Logout</button></>)}
             {/* Pleaceholder til eventuel admin panel*/}
             <AdminPanelReviews />
 

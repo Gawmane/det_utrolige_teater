@@ -12,6 +12,7 @@ import style from '../../assets/Style/Nav.module.scss'
 export const Navigation = () => {
     //Custum hook useAuth - henter vores getter og vores login side
     const { loginData } = useAuth(Login);
+
     return (
 
         <nav className={style.navigation}>
@@ -20,7 +21,6 @@ export const Navigation = () => {
                 <li><NavLink to={'/events'}>Forstillinger og events</NavLink></li>
                 <li><NavLink to={'/actors'}>Skuespillere</NavLink></li>
                 {/* //Hvis vi er logget ind vis "login" i nav ellers vis "logud" */}
-
                 <li><NavLink to={'/login'}>{loginData.access_token ? "Min side" : "Login"}</NavLink></li>
 
             </ul>

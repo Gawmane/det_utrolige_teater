@@ -8,6 +8,7 @@ import Moment from 'moment'
 import { Layout } from "../../Tools/Layout/Layout"
 import { PostReviews } from "./Post";
 import { Login } from "../Login/Login";
+import { AiOutlineStar } from "react-icons/ai";
 
 // Function Component til lister
 export const ReviewsList = () => {
@@ -45,7 +46,7 @@ export const ReviewsList = () => {
                     const date = Moment(items.created).format("DD.MM.YYYY");
                     return (
                         <article key={items.id} >
-                            <p>{items.num_stars}</p>
+                            <p>{items.num_stars} <AiOutlineStar /> </p>
                             <p>{date}</p>
                             <p>{items.subject}</p>
                             <p>{items.comment}</p>
