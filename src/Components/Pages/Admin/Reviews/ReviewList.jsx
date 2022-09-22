@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from "../../Tools/Appservice/Auth";
+import { useAuth } from "../../../Tools/Appservice/Auth";
 import Moment from 'moment'
 //Styling
-import style from "../../../assets/Style/Login.module.scss"
-import { Layout } from "../../Tools/Layout/Layout"
+import style from "../../../../assets/Style/Login.module.scss"
+import { Layout } from "../../../Tools/Layout/Layout"
 import { PostReviews } from "./ReviewPost";
-import { Login } from "../Login/Login";
+import { Login } from "../../Login/Login";
 import { AiFillStar } from "react-icons/ai";
 import { BsCardText } from "react-icons/bs";
 

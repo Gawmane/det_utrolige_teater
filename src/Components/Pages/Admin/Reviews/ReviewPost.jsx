@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
 import axios from "axios";
-import { authHeader } from "../../Tools/Appservice/AuthHeader";
+import { authHeader } from "../../../Tools/Appservice/AuthHeader";
 import { Link } from "react-router-dom";
-import style from "../../../assets/Style/Login.module.scss"
+import style from "../../../../assets/Style/Login.module.scss"
+
 import { AiFillStar } from "react-icons/ai";
 
 const colors = {

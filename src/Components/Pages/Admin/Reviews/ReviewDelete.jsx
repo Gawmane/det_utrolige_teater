@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../Tools/Appservice/Auth";
-import { authHeader } from "../../Tools/Appservice/AuthHeader";
+import { useAuth } from "../../../Tools/Appservice/Auth";
+import { authHeader } from "../../../Tools/Appservice/AuthHeader";
 import axios from "axios";
-import style from "../../../assets/Style/Login.module.scss"
+import style from "../../../../assets/Style/Login.module.scss"
 
 //Styling
 import { AiFillEdit, AiOutlineCloseCircle } from "react-icons/ai";

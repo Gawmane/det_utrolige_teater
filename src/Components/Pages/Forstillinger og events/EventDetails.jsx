@@ -7,7 +7,7 @@ import Moment from 'moment'
 import { Layout } from "../../Tools/Layout/Layout";
 import style from "../../../assets/Style/List.module.scss"
 
-import { ReviewsList } from "../Admin/ReviewList";
+import { ReviewsList } from "../Admin/Reviews/ReviewList";
 
 // Function Component til details
 export const EventDetails = () => {

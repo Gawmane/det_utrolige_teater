@@ -7,10 +7,9 @@ import { Home } from '../../Pages/Home/Home'
 import { Login } from '../../Pages/Login/Login'
 import { EventList } from '../../Pages/Forstillinger og events/EventList'
 import { EventDetails } from '../../Pages/Forstillinger og events/EventDetails'
-import { EditReviews } from '../../Pages/Admin/ReviewPut'
+import { EditReviews } from '../../Pages/Admin/Reviews/ReviewPut'
 import { ActorsList } from '../../Pages/Skuespillere/ActorsList'
 import { ActorsDetails } from '../../Pages/Skuespillere/ActorsDetails'
-import { Form, FormPost } from '../../Pages/Bestilling/Form'
 import { BuyTicket } from '../../Pages/Bestilling/BuyTickey'
 
 

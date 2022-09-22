@@ -10,7 +10,7 @@ import { Layout } from "../../Tools/Layout/Layout";
 import { AiOutlineStar, AiFillHeart } from "react-icons/ai";
 import { FaTicketAlt } from "react-icons/fa";
 
-import { AdminPanelReviews } from "../Admin/ReviewDelete";
+import { AdminPanelReviews } from "../Admin/Reviews/ReviewDelete";
 
 // Function Component til login
 export const Login = () => {
