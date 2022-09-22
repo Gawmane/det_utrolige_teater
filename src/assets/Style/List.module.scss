@@ -71,16 +71,16 @@
     grid-template-columns: auto auto auto;
 
     figure {
+        display: grid;
+        grid-template-rows: auto auto;
 
         img {
-            object-position: 50% 50%;
             width: 100%;
-            object-fit: cover;
 
         }
 
         hr {
-            width: 50%;
+            width: 80%;
             border: $hrline;
 
         }
@@ -93,8 +93,35 @@
             justify-content: center;
             align-items: flex-end;
             align-content: stretch;
+
+            h3 {
+                font-family: $headerFont;
+                font-weight: 200;
+                padding-top: 1em;
+                font-size: 20pt;
+                color: $Primary;
+            }
+
+            p {
+                font-family: $TextFont;
+                margin: 0;
+                padding: 0;
+                font-size: 11pt;
+
+                &:last-of-type {
+                    font-size: 13pt;
+
+                }
+
+            }
         }
 
+        button {
+            &:first-of-type {
+                margin-left: 7.5em;
+                margin-right: 0;
+            }
+        }
     }
 
     button {

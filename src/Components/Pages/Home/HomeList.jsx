@@ -27,16 +27,16 @@ export const HomeList = () => {
     return (
         <section className={style.homelist}>
             {data && data.map((items) => {
-                //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
-                const Startdate = Moment(items.startdate).format("DD-MMMM");
-                const Stopdate = Moment(items.stopdate).format("DD-MMMM YYYY");
+                //Konvatering af datoer - viser dag (D= ingen 0 foran DD=0foran) måned (Skrevet ec. November) og år
+                const Startdate = Moment(items.startdate).format("D.MMMM");
+                const Stopdate = Moment(items.stopdate).format("DD.MMMM YYYY");
                 return (
                     <figure key={items.id}>
                         <img src={items.image} alt={items.title} />
                         <figcaption>
                             <article>
                                 <p>{items.stage_name}</p>
-                                <p>{Startdate} - {Stopdate}</p>
+                                <p><b>{Startdate} - {Stopdate}</b></p>
                                 <hr />
                                 <h3>{items.title}</h3>
                                 <p>{items.genre}</p>
