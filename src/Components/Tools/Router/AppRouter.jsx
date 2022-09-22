@@ -10,7 +10,8 @@ import { EventDetails } from '../../Pages/Forstillinger og events/EventDetails'
 import { EditReviews } from '../../Pages/Admin/ReviewPut'
 import { ActorsList } from '../../Pages/Skuespillere/ActorsList'
 import { ActorsDetails } from '../../Pages/Skuespillere/ActorsDetails'
-import { Form } from '../../Pages/Bestilling/Form'
+import { Form, FormPost } from '../../Pages/Bestilling/Form'
+import { BuyTicket } from '../../Pages/Bestilling/BuyTickey'
 
 
 export const AppRouter = () => {
@@ -31,11 +32,12 @@ export const AppRouter = () => {
 
             <Route path="/login">
                 <Route index element={<Login />}></Route>
-                Placeholder til comment
                 <Route path=":review_id" element={<EditReviews />} />
 
             </Route>
-            <Route path="/bestilling" element={<Form />}></Route>
+            <Route path="/bestilling">
+                <Route path=':event_id' element={<BuyTicket />} />
+            </Route>
             <Route path='*' element={<NotFound />} />
         </Routes>
     )

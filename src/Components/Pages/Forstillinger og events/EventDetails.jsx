@@ -65,7 +65,7 @@ export const EventDetails = () => {
                                 </span>
                                 <h3>{data.title}</h3>
                                 <h4>{data.genre}</h4>
-                                <button><Link to={`/${data.id}`} >Køb billet</Link></button>
+                                <button><Link to={`${data.id}`} >Køb billet</Link></button>
                                 <p>{data.description}</p>
                             </article>
                             <article>

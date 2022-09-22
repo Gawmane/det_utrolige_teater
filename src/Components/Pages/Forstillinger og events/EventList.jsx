@@ -61,7 +61,7 @@ export const EventList = () => {
 
                                         </span>
                                         <button className={style.btnreadmore}><Link to={`${items.id}`}  >Læs mere</Link></button>
-                                        <button className={style.btnbuy}><Link to={`/bestilling`} >Køb billet</Link></button>
+                                        <button className={style.btnbuy}><Link to={`/bestilling/${items.id}`} >Køb billet</Link></button>
                                     </article>
                                 </figcaption>
                             </figure>
