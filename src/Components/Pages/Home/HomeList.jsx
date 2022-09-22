@@ -41,8 +41,8 @@ export const HomeList = () => {
                                 <h3>{items.title}</h3>
                                 <p>{items.genre}</p>
                             </article>
-                            <button className={style.btnreadmore}><Link to={`/boliger/${items.id}`} >Læs mere</Link></button>
-                            <button className={style.btnbuy}><Link to={`/boliger/${items.id}`} >Køb billet</Link></button>
+                            <button className={style.btnreadmore}><Link to={`/events/${items.id}`} >Læs mere</Link></button>
+                            <button className={style.btnbuy}><Link to={`/bestilling/${items.id}`} >Køb billet</Link></button>
                         </figcaption>
                     </figure>
 
