@@ -6,7 +6,7 @@ import Moment from 'moment'
 //Styling
 import style from "../../../assets/Style/Login.module.scss"
 import { Layout } from "../../Tools/Layout/Layout"
-import { PostReviews } from "./Post";
+import { PostReviews } from "./ReviewPost";
 import { Login } from "../Login/Login";
 import { AiFillStar } from "react-icons/ai";
 import { BsCardText } from "react-icons/bs";
