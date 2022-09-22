@@ -57,11 +57,13 @@ export const EventList = () => {
                                         <span>
 
                                             <p>{items.stage_name}</p>
-                                            <p>{Startdate} - {Stopdate}</p>
+                                            <p><b>{Startdate} - {Stopdate}</b></p>
 
                                         </span>
-                                        <button className={style.btnreadmore}><Link to={`${items.id}`}  >Læs mere</Link></button>
-                                        <button className={style.btnbuy}><Link to={`/bestilling/${items.id}`} >Køb billet</Link></button>
+                                        <span>
+                                            <button className={style.btnreadmore}><Link to={`${items.id}`}  >Læs mere</Link></button>
+                                            <button className={style.btnbuy}><Link to={`/bestilling/${items.id}`} >Køb billet</Link></button>
+                                        </span>
                                     </article>
                                 </figcaption>
                             </figure>

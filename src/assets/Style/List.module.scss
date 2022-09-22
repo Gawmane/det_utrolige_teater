@@ -86,6 +86,9 @@
 .eventlist {
     @include figure;
 
+    h1 {
+        text-align: end;
+    }
 
 
     figure {
@@ -97,24 +100,46 @@
         margin-left: 0;
         margin-right: 0;
 
+        img {
+            width: 100%;
+        }
+
         figcaption {
+
             article {
                 display: grid;
-                grid-template-columns: 25% 50% 12.5% 12.5%;
+                grid-template-columns: 25% 50% auto;
                 @include button;
 
                 h3 {
+                    font-family: $headerFont;
+                    font-weight: 200;
                     border-right: $hrline;
                     padding: 0.5em;
                     color: $Primary;
+                    font-size: 20pt;
                 }
 
                 span {
                     padding-left: 0.5em;
-                    display: grid;
-                    grid-template-rows: auto auto;
 
+                    &:first-of-type {
+                        padding-top: 1em;
+                    }
 
+                    &:last-of-type {
+                        margin: auto;
+                    }
+
+                    // display: grid;
+                    // grid-template-rows: auto auto;
+
+                    p {
+                        display: block;
+
+                        margin: 0;
+                        font-family: $TextFont;
+                    }
                 }
 
 

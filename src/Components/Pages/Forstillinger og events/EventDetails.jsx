@@ -71,7 +71,19 @@ export const EventDetails = () => {
                             <article>
                                 <h4>Medvirkende</h4>
 
-                                {/* <ActorsListDetails /> */}
+                                {data.actors && data.actors.map(item => {
+                                    return (
+                                        <Link to={`/actors/${item.id}`}>
+                                            <figure>
+                                                <img src={item.image} alt={item.name} />
+                                                <figcaption>
+                                                    <p>{item.name}</p>
+
+                                                </figcaption>
+                                            </figure>
+                                        </Link>
+                                    )
+                                })}
 
                             </article>
                         </figcaption>
@@ -87,45 +99,45 @@ export const EventDetails = () => {
     )
 }
 
-// export const ActorsListDetails = () => {
-//     const { data_id } = useParams(0);
-//     //Får objekt ud {} - fordi [] arrey kommer kun ud ved lister
-//     const [data, setData] = useState({});
+export const ActorsListDetails = () => {
+    const { event_id } = useParams(0);
+    //Får objekt ud {} - fordi [] arrey kommer kun ud ved lister
+    const [data, setData] = useState({});
 
 
 
-//     // Hook til styring af renders
-//     useEffect(() => {
-//         const getData = async () => {
-//             try {
-//                 const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/${data_id}`);
-//                 if (result.data) {
-//                     setData(result.data.item.actors);
-//                 }
-//             } catch (error) {
-//                 console.log(error)
-//             }
-//         }
-//         // Funktionskald
-//         getData()
-//     },
-//         // Dependency array - hvis data_id  ændres renderes komponenten
-//         [data_id])
+    // Hook til styring af renders
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/${event_id}`);
+                if (result.data) {
+                    setData(result.data.item.actors);
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        // Funktionskald
+        getData()
+    },
+        // Dependency array - hvis data_id  ændres renderes komponenten
+        [event_id])
 
-//     return (
-//         <>
-//             {data && data.map((actors) => {
-//                 return (
-//                     <figure>
-//                         <img src={actors.image} alt={actors.name} />
-//                         <figcaption>
-//                             <p>{actors.name}</p>
-//                         </figcaption>
-//                     </figure>
-//                 )
-//             })}
-//         </>
+    return (
+        <>
+            {data && data ? (
 
-//     )
-// }
+                <figure>
+                    <img src={data.image} alt={data.name} />
+                    <figcaption>
+                        <p>{data.name}</p>
+                        <p>hej</p>
+                    </figcaption>
+                </figure>
+            ) : null}
 
+        </>
+
+    )
+}
