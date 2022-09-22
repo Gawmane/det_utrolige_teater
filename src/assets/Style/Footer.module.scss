@@ -4,23 +4,29 @@
 footer {
     height: 15%;
     width: 100%;
-    display: grid;
     background-color: $Tertiary;
     color: #fff;
     font-size: 2vh;
     padding-left: 1em;
     margin: 0 -1% -1%-1%;
-    padding: 10px 10px 0 10px;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    padding-left: 3em;
+    display: grid;
+    grid-template-columns: 20% 20% 50% auto;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: space-between;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: nowrap;
+    // justify-content: space-evenly;
+    // align-items: center;
+    // align-content: space-between;
 
     h3 {
         text-transform: uppercase;
+        font-size: $TextFont;
+        margin-bottom: 0;
+        padding-bottom: 0.5em;
     }
 
     a {
@@ -28,7 +34,10 @@ footer {
         text-decoration: none;
         color: #fff;
         display: block;
+        font-size: $TextFont;
     }
+
+
 
     svg {
         text-align: right;
