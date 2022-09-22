@@ -94,8 +94,8 @@ export const Login = () => {
                     <h3><AiOutlineStar /> Mine anmeldelser</h3>
                     <AdminPanelReviews />
                     {/* Ikke sat op endnu */}
-                    <AdminPanelLikes />
-                    <AdminPanelReviews />
+                    {/* <AdminPanelLikes />
+                    <AdminPanelReviews /> */}
 
                 </>)}
         </section>
