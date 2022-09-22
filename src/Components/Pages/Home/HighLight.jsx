@@ -27,15 +27,15 @@ export const HighLight = () => {
         <section className={style.highlight}>
             {data && data.map((items) => {
                 //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
-                const Startdate = Moment(items.startdate).format("DD-MMMM");
-                const Stopdate = Moment(items.stopdate).format("DD-MMMM YYYY");
+                const Startdate = Moment(items.startdate).format("DD.MMMM");
+                const Stopdate = Moment(items.stopdate).format("DD.MMMM YYYY");
                 return (
                     <figure key={items.id}>
 
                         <figcaption>
                             <article>
                                 <p>{items.stage_name}</p>
-                                <p>{Startdate} - {Stopdate}</p>
+                                <p><b>{Startdate} - {Stopdate}</b></p>
                                 <hr />
                                 <h3>{items.title}</h3>
                                 <p>{items.genre}</p>

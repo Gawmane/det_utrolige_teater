@@ -45,8 +45,8 @@ export const EventList = () => {
                     {/* //Mapper data */}
                     {data && data.map((items) => {
                         //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
-                        const Startdate = Moment(items.startdate).format("DD-MMMM");
-                        const Stopdate = Moment(items.stopdate).format("DD-MMMM YYYY");
+                        const Startdate = Moment(items.startdate).format("DD.MMMM");
+                        const Stopdate = Moment(items.stopdate).format("DD.MMMM YYYY");
 
                         return (
                             <figure key={items.id}>

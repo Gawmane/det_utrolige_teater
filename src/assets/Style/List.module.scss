@@ -10,27 +10,48 @@
     figure {
         display: grid;
         grid-template-columns: 20% 80%;
-        height: 40vh;
+        height: 45vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
 
         img {
-            width: 40vh;
+            width: 98%;
+            max-height: 42vh;
+            margin: auto;
+
+            object-fit: fill;
         }
 
         figcaption {
             article {
                 text-align: end;
-                padding: 0.5em;
+                padding: 1em;
+                margin-top: 3em;
 
                 hr {
-                    width: 70%;
+                    width: 95%;
                     border: $hrline;
 
                 }
 
+                p {
+                    font-family: $TextFont;
+                    display: block;
+                    font-size: 11pt;
 
+                    &:last-of-type {
+                        font-size: 13pt;
+                        margin: 0;
+                        pad: 0;
+                    }
+                }
 
                 h3 {
-
+                    font-family: $headerFont;
+                    font-weight: 200;
+                    padding-top: 1em;
+                    font-size: 25pt;
                     color: $Primary;
                 }
             }
