@@ -48,7 +48,7 @@ export const HomeList = () => {
 
                 )
             })}
-            <button><Link to={'/events'}>Se alle forestillinger</Link></button>
+            <button className={style.viewbtn}> <Link to={'/events'}>Se alle forestillinger</Link></button>
         </section>
     );
 }

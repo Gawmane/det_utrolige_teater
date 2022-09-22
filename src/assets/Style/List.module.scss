@@ -63,6 +63,7 @@
 
 //Liste på forside
 .homelist {
+    margin-bottom: 5%;
 
 
     @include figure;
@@ -124,9 +125,14 @@
         }
     }
 
-    button {
-
+    .viewbtn {
+        border: solid 0.5px $Primary;
         background-color: $Primary;
+        text-transform: uppercase;
+        padding: 1em;
+        position: absolute;
+        right: 8.5%;
+        bottom: -82%;
     }
 }
 

@@ -38,7 +38,7 @@ export const EventDetails = () => {
     //Konvatering af datoer - viser dag måned (Skrevet ec. November) og år
     //Laves som funktion her da vi ikke mapper
     const StartDate = () => {
-        const startdate = Moment(data.startdate).format("DD.MMMM YYYY")
+        const startdate = Moment(data.startdate).format("D.MMMM YYYY")
         return startdate
     }
     const StopDate = () => {
