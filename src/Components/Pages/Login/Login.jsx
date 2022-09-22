@@ -11,6 +11,7 @@ import { AiOutlineStar, AiFillHeart } from "react-icons/ai";
 import { FaTicketAlt } from "react-icons/fa";
 
 import { AdminPanelReviews } from "../Admin/Reviews/ReviewDelete";
+import { AdminPanelLikes } from "../Admin/Likes/LikesDelete";
 
 // Function Component til login
 export const Login = () => {
@@ -92,6 +93,10 @@ export const Login = () => {
                     <h3><AiFillHeart /> Mine favoritter</h3>
                     <h3><AiOutlineStar /> Mine anmeldelser</h3>
                     <AdminPanelReviews />
+                    {/* Ikke sat op endnu */}
+                    <AdminPanelLikes />
+                    <AdminPanelReviews />
+
                 </>)}
         </section>
 
