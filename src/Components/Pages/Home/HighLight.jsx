@@ -4,25 +4,31 @@ import style from "../../../assets/Style/List.module.scss"
 import Moment from 'moment'
 
 export const HighLight = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
 
-
-    // useEffect hook - styring af renders
     useEffect(() => {
-        //Async funktion til kald af api med hjælp fra appservice
-        const getData = async () => {
-            try {
-                const result = await axios.get('https://api.mediehuset.net/detutroligeteater/events?limit=1');
-                setData(result.data.items);
-                //Hvis fejl vis i console
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        //Funktionskald 
-        getData();
-        // Dependency array - hvis det ændres renderes komponenten
-    }, [setData]);
+        fetch('https://api.mediehuset.net/detutroligeteater/events?limit=1')
+            .then(response => response.json())
+            .then(data => setData(data.items));
+
+
+    }, []);
+    // // useEffect hook - styring af renders
+    // useEffect(() => {
+    //     //Async funktion til kald af api med hjælp fra appservice
+    //     const getData = async () => {
+    //         try {
+    //             const result = await axios.get('https://api.mediehuset.net/detutroligeteater/events?limit=1');
+    //             setData(result.data.items);
+    //             //Hvis fejl vis i console
+    //         } catch (error) {
+    //             console.log(error)
+    //         }
+    //     }
+    //     //Funktionskald 
+    //     getData();
+    //     // Dependency array - hvis det ændres renderes komponenten
+    // }, [setData]);
     return (
         <section className={style.highlight}>
             {data && data.map((items) => {
