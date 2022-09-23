@@ -167,6 +167,12 @@
     figure {
         display: grid;
         grid-template-columns: 10% auto;
+
+        @media (width < $mobile) {
+            display: inline;
+
+        }
+
         height: 15%;
         width: 100%;
         background-color: transparent;
@@ -175,14 +181,28 @@
 
         img {
             width: 100%;
+
+
         }
 
         figcaption {
+            @media (width < $mobile) {
+                border: solid 1px $Primary;
+                margin-bottom: 5em;
+            }
 
             article {
                 display: grid;
                 grid-template-columns: 25% 50% auto;
                 @include button;
+
+                @media (width < $mobile) {
+                    display: inline;
+
+                    p {
+                        padding-left: 1em;
+                    }
+                }
 
                 h3 {
                     @include headers;
