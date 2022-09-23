@@ -43,7 +43,7 @@ export const ActorsDetails = () => {
                             <img src={data.image} alt={data.name} />
                             <figcaption>
                                 <article>
-                                    <h4>{data.name}</h4>
+                                    <h3>{data.name}</h3>
                                     <p>{data.description}</p>
                                 </article>
                             </figcaption>

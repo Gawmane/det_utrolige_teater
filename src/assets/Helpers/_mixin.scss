@@ -5,6 +5,15 @@
     margin-right: auto;
 }
 
+@mixin headers {
+
+    font-family: $headerFont;
+    font-weight: 200;
+    font-size: 20pt;
+    color: $Primary;
+
+}
+
 //Sidepadding til at få full site
 @mixin sidepadding {
     padding-left: 5%;

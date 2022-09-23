@@ -56,10 +56,10 @@ export const EventDetails = () => {
                     <figure key={data.id}>
                         <img src={data.image} alt={data.title} />
                         <figcaption>
-                            <article>
+                            <article><p><b>{data.stage_name}</b></p>
                                 <span>
 
-                                    <p><b>{data.stage_name}</b></p>
+
                                     <p>{StartDate()} - {StopDate()}</p>
                                     <p>Billetpris: {data.price} DKK</p>
                                 </span>
@@ -67,9 +67,10 @@ export const EventDetails = () => {
                                 <h4>{data.genre}</h4>
                                 <button><Link to={`${data.id}`} >Køb billet</Link></button>
                                 <p>{data.description}</p>
-                            </article>
-                            <article>
                                 <h4>Medvirkende</h4>
+                            </article>
+                            <article className={style.showactors}>
+
 
                                 {data.actors && data.actors.map(item => {
                                     return (

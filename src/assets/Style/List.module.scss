@@ -48,11 +48,11 @@
                 }
 
                 h3 {
-                    font-family: $headerFont;
-                    font-weight: 200;
+
                     padding-top: 1em;
                     font-size: 25pt;
-                    color: $Primary;
+                    @include headers;
+
                 }
             }
         }
@@ -76,7 +76,12 @@
         grid-template-rows: auto auto;
 
         img {
-            width: 100%;
+            width: 97%;
+            height: 95%;
+
+            margin: auto;
+
+            object-fit: fill;
 
         }
 
@@ -96,11 +101,10 @@
             align-content: stretch;
 
             h3 {
-                font-family: $headerFont;
-                font-weight: 200;
+                @include headers;
+
                 padding-top: 1em;
-                font-size: 20pt;
-                color: $Primary;
+
             }
 
             p {
@@ -166,12 +170,11 @@
                 @include button;
 
                 h3 {
-                    font-family: $headerFont;
-                    font-weight: 200;
+                    @include headers;
+
                     border-right: $hrline;
                     padding: 0.5em;
-                    color: $Primary;
-                    font-size: 20pt;
+
                 }
 
                 span {
@@ -210,38 +213,163 @@
 .eventdetails {
     @include figure;
     @include button;
-    border: solid 1px $Primary;
+    border: solid 0.5px $Primary;
+
     margin-bottom: 5%;
 
 
     figure {
+        border: none;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
         img {
-            width: 10vw;
+            width: 98%;
+            height: 50vh;
+            margin: auto;
+        }
+
+        h4 {
+            font-weight: 200;
+            padding-top: 0;
+            margin-top: 0;
+            padding-bottom: 0.5em;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-size: 20pt;
+            font-family: $TextFont;
+
         }
 
         figcaption {
-            span {
-                border-bottom: $hrline;
+
+
+            article {
+                padding: 1em;
+                font-family: $TextFont;
+
+
 
                 p {
-                    color: black;
-                    text-transform: uppercase
+                    &:first-of-type {
+                        color: black;
+                        text-transform: uppercase;
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+
+                    }
+
+                    @include space;
+                    color: $Primary;
                 }
+
+                span {
+                    border-bottom: $hrline;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items: stretch;
+                    align-content: stretch;
+
+                    p {
+                        color: black;
+                        text-transform: uppercase;
+                        padding-top: 0;
+                        margin-top: 0;
+                    }
+                }
+
+
+
+                h3 {
+                    @include headers;
+                    padding-top: 1em;
+                    font-size: 30pt;
+                    margin-bottom: 0;
+                    padding-top: 0;
+
+                }
+
+                button {
+                    border: solid 0.5px $Primary;
+                    background-color: $Secondary;
+                    text-transform: uppercase;
+                    padding: 1em;
+                    position: absolute;
+                    right: 6%;
+                    top: 100%;
+                }
+
+
             }
 
-            button {
-                background-color: $Primary;
-                left: 90%;
-                position: absolute;
-            }
+            .showactors {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: 1em;
+                border-bottom: $Secondary dashed 1px;
 
-            p {
-                @include space;
-                color: $Primary;
+
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-family: $TextFont;
+                    text-align: center;
+                }
+
+                figure {
+                    border: solid 0.5px $Primary;
+
+
+                    img {
+                        height: 80%;
+                    }
+
+                    figcaption {
+                        height: 18%;
+                        border-bottom: solid 1px $Primary;
+
+                        p {
+                            color: $Primary;
+
+                        }
+                    }
+                }
+
             }
         }
     }
 
+    .reviewslist {
+        h1 {
+            color: black;
+            font-family: $TextFont;
+            font-size: 20pt;
+        }
+
+        text-transform: uppercase;
+        font-family: $TextFont;
+        padding-left: 1em;
+
+        article {
+            border-top: $hrline;
+            padding-bottom: 1em;
+            padding-top: 1em;
+
+
+            p {
+                margin: 0;
+                padding: 0;
+
+                &:last-of-type {
+                    color: $Primary;
+                }
+            }
+        }
+    }
 
 }
 
@@ -269,6 +397,8 @@
                 margin: 0;
                 padding: 0;
                 text-transform: uppercase;
+                font-family: $TextFont;
+                font-weight: 200;
             }
 
             p {
@@ -313,6 +443,8 @@
                 margin: 0;
                 padding: 0;
                 text-transform: uppercase;
+                font-family: $TextFont;
+                font-weight: 200;
             }
 
             p {

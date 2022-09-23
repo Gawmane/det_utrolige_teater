@@ -4,7 +4,8 @@ import axios from "axios";
 import { useAuth } from "../../../Tools/Appservice/Auth";
 import Moment from 'moment'
 //Styling
-import style from "../../../../assets/Style/Login.module.scss"
+import style from "../../../../assets/Style/Login.module.scss";
+import styles from "../../../../assets/Style/List.module.scss"
 import { Layout } from "../../../Tools/Layout/Layout"
 import { PostReviews } from "./ReviewPost";
 import { Login } from "../../Login/Login";
@@ -46,9 +47,9 @@ export const ReviewsList = () => {
 
     //Return af vores inhold
     return (
-        //Styring af title og beskrivelse via vores layout (seo)
-        <Layout title="Anmedelser" description="beskrivelse">
-            <>
+        <section className={styles.reviewslist}>
+            {/* //Styring af title og beskrivelse via vores layout (seo) */}
+            <Layout title="Anmedelser" description="beskrivelse">
                 {/* //Mapper data */}
                 {data && data.map((items) => {
                     // Const til konvatering af dato til dato(01) Måned(maj) år (2000)
@@ -72,10 +73,10 @@ export const ReviewsList = () => {
                             {/* Til tjek om der er data i numstars
                             <p>{numStars}</p> 
                             */}
-                            <p>{items.subject}</p>
+                            <p><b>{items.user.firstname} {items.user.lastname}</b></p>
+
                             <p>{items.comment}</p>
-                            <p>{items.user.firstname} {items.user.lastname}</p>
-                            <p></p>
+
 
                         </article>
 
@@ -99,7 +100,7 @@ export const ReviewsList = () => {
                 </section>
 
 
-            </>
-        </Layout>
+            </Layout>
+        </section>
     )
 }
