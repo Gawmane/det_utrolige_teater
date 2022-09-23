@@ -220,3 +220,65 @@
 
     }
 }
+
+.reviewput {
+    border: solid 0.5px $Primary;
+
+    form {
+        height: 50%;
+
+        input {
+            @include input;
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding: 5px 5px;
+            display: block;
+            width: 50%;
+            height: 3vh;
+
+
+        }
+
+
+
+        textarea {
+            border: none;
+            resize: none;
+            @include input;
+            margin-left: 0;
+            padding: 5px 5px;
+            display: inline;
+            width: 50%;
+            height: 20vh;
+        }
+
+        //Style af knapper
+        button {
+            @include button;
+            background-color: $Primary;
+            color: white;
+            padding: 1em;
+            margin-left: 2em;
+            margin-bottom: 0.5em;
+
+
+            display: inline;
+
+        }
+
+        a {
+            button {
+                @include button;
+                background-color: $Primary;
+                color: white;
+                padding: 1em;
+                margin-left: 2em;
+                margin-bottom: 0.5em;
+
+
+                display: inline;
+            }
+        }
+
+    }
+}

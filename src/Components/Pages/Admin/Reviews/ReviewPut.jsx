@@ -40,7 +40,7 @@ export const EditReviews = () => {
         setFormStatus(true)
     }
     return (
-        <section >
+        <section className={style.reviewput} >
 
             {/* Conditional ternary operator - vis input - efter tryk submit vis message */}
             {!formStatus ?
