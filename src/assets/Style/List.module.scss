@@ -336,6 +336,11 @@
                     position: absolute;
                     right: 6%;
                     top: 100%;
+
+                    @media (width < $mobile) {
+                        top: 105%;
+                        right: 9%;
+                    }
                 }
 
 
@@ -347,6 +352,10 @@
                 gap: 1em;
                 border-bottom: $Secondary dashed 1px;
 
+                @media (width < $mobile) {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                }
 
                 a {
                     text-decoration: none;
