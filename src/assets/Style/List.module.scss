@@ -15,6 +15,10 @@
         margin: 0;
         padding: 0;
 
+        @media (width < $mobile) {
+            display: none;
+        }
+
         img {
             width: 98%;
             max-height: 42vh;
@@ -70,6 +74,10 @@
     @include button;
     display: grid;
     grid-template-columns: auto auto auto;
+
+    @media (width < $mobile) {
+        display: inline;
+    }
 
     figure {
         display: grid;
@@ -137,6 +145,13 @@
         position: absolute;
         right: 8.5%;
         bottom: -82%;
+
+        @media (width < $mobile) {
+            position: relative;
+            margin-bottom: 5%;
+            margin-left: 57%;
+        }
+
     }
 }
 
