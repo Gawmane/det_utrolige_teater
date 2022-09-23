@@ -361,6 +361,11 @@
                         top: 105%;
                         right: 9%;
                     }
+
+                    @media (width < $tablet) {
+                        top: 100%;
+                        right: 8%;
+                    }
                 }
 
 
@@ -375,6 +380,11 @@
                 @media (width < $mobile) {
                     display: grid;
                     grid-template-columns: auto auto;
+                }
+
+                @media (width < $tablet) {
+                    display: grid;
+                    grid-template-columns: auto auto auto;
                 }
 
                 a {
