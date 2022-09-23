@@ -32,7 +32,6 @@ export const FormPost = (props) => {
     }
 
 
-
     const [seats, setSeats] = useState();
     // const { register, formState: { errors } } = useForm();
     useEffect(() => {
@@ -94,9 +93,12 @@ export const FormPost = (props) => {
             {errors.city && errors.city.type === "required" && <span>Du skal indtaste dit bynavn</span>}
             {errors.city && errors.city.type === "pattern" && <span>Navnet på byen må kun indholde bogstaver</span>}
 
-            {seats && seats.map(item => {
+            {seats && seats.map(seat => {
                 return (
-                    <input type="checkbox" name="seats[]" value={item.id} />
+                    <div key={seat.id}>
+                        <input type="checkbox" name="seats[]" value={seat.id} />
+                        {seat.id}
+                    </div>
                 )
             })}
 

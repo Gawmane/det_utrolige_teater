@@ -65,6 +65,7 @@ const SearchResult = props => {
 
 //Viser en liste med data hvis orden findes
 const Result = (props) => {
+
     //Funktion til at slette vores liste af data på viste søgord når vi klikker videre
     const RemoveSearchResult = () => {
         if (keyword) {
