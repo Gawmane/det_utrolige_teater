@@ -51,6 +51,11 @@
                 width: 80%;
 
             }
+
+            @media (width < $tablet) {
+                width: 50%;
+
+            }
         }
 
         //Style af knapper

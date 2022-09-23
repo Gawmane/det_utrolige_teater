@@ -529,7 +529,7 @@
         display: grid;
         grid-template-columns: auto auto;
 
-        @media (width < $mobile) {
+        @media (width < $tablet) {
             display: inline;
 
 
