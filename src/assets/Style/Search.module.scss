@@ -12,6 +12,13 @@
     padding-top: 1.5em;
     padding-bottom: 3em;
 
+    //Gør at søger bliver fjernet når vi kommer ned i mobil størrelse
+    @media (width < $mobile) {
+        display: none;
+
+
+    }
+
     input {
         text-transform: uppercase;
         border: none;
@@ -24,6 +31,8 @@
         border-bottom: solid 2px rgb(228, 228, 228);
 
     }
+
+
 }
 
 //Article under Result der tager alt indhold på det søgte ord
@@ -51,7 +60,6 @@
         display: block;
         padding: 0.5em;
     }
-
 
 
 }

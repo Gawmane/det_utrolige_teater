@@ -66,8 +66,8 @@
         background-color: transparent;
         transition: .2s ease-in-out;
         height: 7vh;
-        width: 3.5vw;
-        color: rgb(255, 0, 0);
+        width: 10vw;
+        color: $Primary;
 
         &:hover {
             cursor: pointer;
@@ -92,8 +92,9 @@
     .burgerMenuClose {
         position: absolute;
         height: 7vh;
-        width: 3.5vw;
-        color: rgb(255, 0, 0);
+        width: 10vw;
+
+        color: $Primary;
         background-color: transparent;
         transition: .2s ease-in-out;
         // z-index: 1;
@@ -112,16 +113,15 @@
     top: 5vh;
     width: 90%;
     padding: 1em;
-    border: 1px solid #000;
-    background-color: #000;
+    background-color: $Primary;
 
     .navigationLinks {
         text-decoration: none;
         color: #fff;
         font-size: 1em;
 
-        &:focus {
-            color: $Primary;
+        &:hover {
+            color: #000;
         }
     }
 
