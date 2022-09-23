@@ -15,6 +15,20 @@ footer {
     display: grid;
     grid-template-columns: 20% 20% 50% auto;
 
+    @media (width < $mobile) {
+        display: grid;
+        grid-template-columns: auto auto;
+        font-size: 10pt;
+
+    }
+
+    @media (width < $tablet) {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+
+
+    }
+
     // display: flex;
     // flex-direction: row;
     // flex-wrap: nowrap;
@@ -46,7 +60,13 @@ footer {
         cursor: pointer;
 
         @media (width < $mobile) {
-            padding: 0;
+            padding-top: 1em;
+
+        }
+
+        @media (width < $tablet) {
+            display: inline;
+            padding: 0.5em;
 
         }
     }
