@@ -15,6 +15,12 @@
         margin: 0;
         padding: 0;
 
+        @media (width < $large) {
+            height: 55vh;
+            width: 100%;
+        }
+
+
         @media (width < $mobile) {
             display: none;
         }
@@ -25,6 +31,11 @@
             margin: auto;
 
             object-fit: fill;
+
+            @media (width < $large) {
+                width: 98%;
+                max-height: 53vh;
+            }
         }
 
         figcaption {
@@ -173,6 +184,12 @@
 
         }
 
+        @media (width < $large) {
+            display: grid;
+            grid-template-columns: 20% auto;
+
+        }
+
         height: 15%;
         width: 100%;
         background-color: transparent;
@@ -182,7 +199,10 @@
         img {
             width: 100%;
 
-
+            @media (width < $large) {
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         figcaption {
