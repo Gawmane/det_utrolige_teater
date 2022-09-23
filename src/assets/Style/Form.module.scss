@@ -6,6 +6,10 @@
     @include Checkmarks;
 }
 
+.checked {
+    background-color: red;
+}
+
 .form {
     input {
         margin-left: 0;
@@ -31,14 +35,5 @@
         text-decoration: none;
         text-transform: uppercase;
         cursor: pointer;
-    }
-}
-
-//Message ved sendt form
-.formMessage {
-    article {
-        p {
-            color: black;
-        }
     }
 }

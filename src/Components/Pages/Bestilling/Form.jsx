@@ -1,41 +1,55 @@
 import style from "../../../assets/Style/Form.module.scss"
 
-import { authHeader } from "../../Tools/Appservice/AuthHeader";
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useState } from 'react'
-import { useParams } from "react-router-dom";
+import { authHeader } from "../../Tools/Appservice/AuthHeader";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 //Form const der indeholder alt funktionelt til kontakt formen
 export const FormPost = (props) => {
-    const { ticket_id } = useParams();
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    //Ved clik onsubmit - vis info i console og gør setformstatus true 
     const onSubmit = async (data) => {
         const formData = new FormData();
-        //Tilføjer eventid, navn, adresse til objektet
         formData.append('event_id', props.event_id);
         formData.append('firstname', data.firstname);
         formData.append('lastname', data.lastname);
         formData.append('address', data.address);
         formData.append('zipcode', data.zipcode);
         formData.append('city', data.city);
+        formData.append('email', data.email);
+        formData.append('seats[]', 1);
+        formData.append('active', 1);
 
-
-        //Bruger authHeader til at tjekke om sessionStorage eksisterer
+        // bruger authHeader til at tjekke om sessionStorage eksisterer
         const result = await axios.post('https://api.mediehuset.net/detutroligeteater/reservations', formData, { headers: authHeader() });
-
-        //Fejlhåndtering i console
         if (result) {
-            console.log('Din Reservation er sendt');
-
+            console.log("den er sendt");
         } else {
             console.log(errors);
         }
     }
+
+
+
+    const [seats, setSeats] = useState();
+    // const { register, formState: { errors } } = useForm();
+    useEffect(() => {
+        const getSeatsData = async () => {
+            try {
+                const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/seats/${props.event_id}`);
+                if (result.data) {
+                    setSeats(result.data.items);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getSeatsData();
+    }, [props])
+
+
     return (
 
         // handleSubmit validere  inputs inden kald af "onSubmit"
@@ -80,8 +94,13 @@ export const FormPost = (props) => {
             {errors.city && errors.city.type === "required" && <span>Du skal indtaste dit bynavn</span>}
             {errors.city && errors.city.type === "pattern" && <span>Navnet på byen må kun indholde bogstaver</span>}
 
+            {seats && seats.map(item => {
+                return (
+                    <input type="checkbox" name="seats[]" value={item.id} />
+                )
+            })}
 
-            <button type="Godkend bestilling" >Send</button>
+            <button >Godkend bestilling</button>
 
 
         </form>

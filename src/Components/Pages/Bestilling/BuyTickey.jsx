@@ -45,13 +45,14 @@ export const BuyTicket = () => {
 
                         <h3>{data.title}</h3>
                         <h3>{StartDate()} KL. {data.starttime}</h3>
-                        <FormPost ticket_id={id} />
+
                         <h4 >BILLETPRIS: {data.price} DKK</h4>
                         <p>PRIS INKL. MOMS</p>
                     </figcaption>
                 </figure>
             ) : null}
 
+            <FormPost event_id={data.id} />
         </section>
     )
 }
