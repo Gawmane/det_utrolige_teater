@@ -458,6 +458,11 @@
 
         }
 
+        @media (width < $tablet) {
+            height: 100%;
+            margin-bottom: 1em;
+
+        }
 
         img {
             height: 25vh;
@@ -470,6 +475,7 @@
 
         figcaption {
             padding-left: 1em;
+
 
 
 
@@ -492,6 +498,11 @@
             height: 7vh;
             margin: 1em;
             margin-top: 100%;
+
+            @media (width < $tablet) {
+
+                margin-top: 160%;
+            }
         }
 
         a {
