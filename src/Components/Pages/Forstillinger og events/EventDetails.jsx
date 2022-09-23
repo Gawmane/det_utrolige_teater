@@ -53,7 +53,7 @@ export const EventDetails = () => {
             {data && data ? (
 
                 <section key={data.id} className={style.eventdetails}>
-                    <figure key={data.id}>
+                    <figure >
                         <img src={data.image} alt={data.title} />
                         <figcaption>
                             <article><p><b>{data.stage_name}</b></p>
@@ -74,7 +74,7 @@ export const EventDetails = () => {
 
                                 {data.actors && data.actors.map(item => {
                                     return (
-                                        <Link to={`/actors/${item.id}`}>
+                                        <Link to={`/actors/${item.id}`} key={item.id}>
                                             <figure>
                                                 <img src={item.image} alt={item.name} />
                                                 <figcaption>

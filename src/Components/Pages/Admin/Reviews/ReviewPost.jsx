@@ -68,7 +68,7 @@ export const PostReviews = (props) => {
                                         {/* Validering NUM_STARS - tjekker om message er udfyldt (required) og hvor langt dens værdi er, og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)
                                         Ved klik på en button skal den tage setRating og give den en værdi
                                         */}
-                                        <input key={index} type="radio" onClick={() => setRating(ratingValue)} value={ratingValue}
+                                        <input key={index.id} type="radio" onClick={() => setRating(ratingValue)} value={ratingValue}
                                             {...register("num_stars", { required: true, min: 1, max: 5 })} ></input>
                                         {/* Måler på hvilken værdi der er blevet valgt og sætter farve på stjernerne efter det 
                                             gul = Hvis værien er større end index vis gul
