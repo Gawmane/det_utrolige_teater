@@ -414,19 +414,35 @@
     margin-bottom: 5%;
 
 
+
     figure {
         border-bottom: $hrline;
         display: grid;
         grid-template-columns: auto auto auto;
         height: 30vh;
 
+        @media (width < $mobile) {
+            display: inline;
+            padding: 0;
+            margin: 0;
+            border: solid 1px $Primary;
+
+        }
+
 
         img {
             height: 25vh;
+
+            @media (width < $mobile) {
+                width: 100%;
+                object-fit: fill;
+            }
         }
 
         figcaption {
             padding-left: 1em;
+
+
 
             h3 {
                 margin: 0;
@@ -462,6 +478,8 @@
     border: solid 1px $Primary;
     margin-bottom: 2%;
 
+
+
     h1 {
 
         padding-left: 1em;
@@ -470,6 +488,12 @@
     figure {
         display: grid;
         grid-template-columns: auto auto;
+
+        @media (width < $mobile) {
+            display: inline;
+
+
+        }
 
         figcaption {
             padding-left: 1em;
@@ -492,6 +516,11 @@
 
 .actorswrapper {
     margin-bottom: 10%;
+
+    @media (width < $mobile) {
+        margin-bottom: 20%;
+
+    }
 }
 
 .actorbtn {
